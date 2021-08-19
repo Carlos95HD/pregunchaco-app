@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
 
-def homeVista(request): 
+def home(request): 
 
 	return render(request, 'home.html')
