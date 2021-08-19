@@ -21,7 +21,13 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('', views.homeVista, name='home'),
     path('login/',auth.LoginView.as_view(template_name = 'usuarios/login.html'), name= 'login'),
     path('logout/', auth.LogoutView.as_view(), name = 'logout'),
+=======
+    path('', views.home, name='home'),
+    path('home', views.home, name ='home'),
+
+>>>>>>> c3728554ed407d94f1a22cd7287290a9fd727916
 ]
