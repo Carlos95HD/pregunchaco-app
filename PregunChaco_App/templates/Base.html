@@ -3,13 +3,18 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="{%static 'css/main.css'%}">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-	<img src="{%static 'img/g9.png'%}">
-	<h1>PregunChaco</h1>
-	<div>
-		<a href="{% url 'login' %}">LOGIN</a>
-	</div>
+
+  <div>
+    <img src="{% static 'img/g9.png' %}" class="logo">
+    <nav>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'login' %}">LOGIN</a>
+    </nav>
+  </div>
+
 
 	{%block contenido%}
 

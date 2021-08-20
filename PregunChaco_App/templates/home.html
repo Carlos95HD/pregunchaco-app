@@ -3,13 +3,61 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Home</title>
-</head>
-<body>
-{% block contenido %}
-<h1>home</h1>
-{% endblock contenido %}
 
+<head>
+  <title>Home</title>
+</head>
+
+<body>
+  {% block contenido %}
+  <div class="container grid grid-cols-2 mx-auto">
+
+    <div class="p-2 text-center">
+      <h1 class='font-bold text-6xl text-bold'>PregunChaco</h1>
+      <p class="text-xl mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+        been the industry's
+        standard dummy text ever since the 1500s,</p>
+      <img src="{% static 'img/home/carpincho.svg' %}" alt="carpincho" class="w-full">
+    </div>
+
+
+    <div class="self-center text-center">
+      <div class="p-6 rounded-3xl px-20 py-24 shadow-2xl">
+        <h2 class="font-semibold text-2xl mb-5">¡Bienvenido a PregunChaco!</h2>
+        <p class="text-xl mb-10">Ingresa a tu cuenta para disfrutar de este increíble juego,
+          consigue las mejores marcas, compite y aprende más sobre esta hermosa
+          ciudad
+        </p>
+
+        <!-- ######### Inicio Login #########-->
+        <div>
+          <p class="mt-5 text-xl font-semibold text-center">
+            Iniciar Sesión
+          </p>
+
+          <form class="grid grid-cols-2 gap-x-4 mb-6" method="POST">{% csrf_token %}
+            {{form.errors}}
+            <input type="text" name="username" placeholder="Usuario"
+              class='border-b col-span-2 p-3 mt-2 focus:outline-none'>
+            <input type="password" name="password" placeholder="Contraseña"
+              class='border-b col-span-2 p-3 mt-2 mb-10 focus:outline-none'>
+
+
+            <button type="submit" name=""
+              class="p-2 mt-4 text-white rounded-full bg-gradient-to-r from-green-400 to-blue-400 transition duration-400 hover:from-green-300 hover:to-blue-300">Ingresar</button>
+            <a href="#"
+              class="cursor-pointer p-2 mt-4 text-white rounded-full bg-gradient-to-r from-green-400 to-blue-400 transition duration-400 hover:from-green-300 hover:to-blue-300">Registrarse</a>
+          </form>
+
+          <a href="#" class="mt-4">¿Has olvidado la contraseña?</a></span>
+        </div>
+      </div>
+
+    </div>
+    <!-- ######### Fin Login #########-->
+
+  </div>
+
+  {% endblock contenido %}
 </body>
 </html>
