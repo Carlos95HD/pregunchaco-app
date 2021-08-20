@@ -25,7 +25,7 @@ select:-webkit-autofill:focus {
 }
 
 .logo {
-  width: 5rem;
+  width: 4rem;
 }
 
 .btn {
@@ -75,4 +75,18 @@ select:-webkit-autofill:focus {
   font-weight: bold;
   padding-left: 7%;
   font-size: xx-large;
+}
+
+.contenedorPie{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; 
+  background-color: #E1E1E1;
+
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer{
+  
 }
