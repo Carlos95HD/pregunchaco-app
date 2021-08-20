@@ -25,10 +25,54 @@ select:-webkit-autofill:focus {
 }
 
 .logo {
-  width: 6rem;
+  width: 5rem;
 }
 
 .btn {
   background: var(--color-light-blue);
   color: white;
+}
+
+.contenedorPadre {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; 
+  background-color: #E1E1E1;
+
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.contenedor{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.Boton_Login{
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 25px; 
+  color: white;
+  cursor: pointer;
+
+  background: -webkit-linear-gradient(right,#2FECC1,#3BF5E6,#2FEC52);
+
+  border-radius: 35px;
+  font-weight: bold;
+  font-size: large;
+  width: 125px; 
+  text-align: center;
+}
+
+.Nombre{
+  color: #1053DB;
+  font-weight: bold;
+  padding-left: 7%;
+  font-size: xx-large;
 }
