@@ -4,7 +4,7 @@
 <html>
 
 <head>
-  <title>Home</title>
+  {% block titulo %}Inicio | PregunChaco{% endblock titulo %}
 </head>
 
 <body>
@@ -43,9 +43,13 @@
 
 
             <button type="submit" name=""
-              class="p-2 mt-4 text-white rounded-full bg-gradient-to-r from-green-400 to-blue-400 transition duration-400 hover:from-green-500 hover:to-blue-500">Ingresar</button>
+              class="p-2 mt-4 text-white rounded-full bg-gradient-to-r from-green-400 to-blue-400 transition duration-400 hover:from-green-500 hover:to-blue-500">
+              Ingresar
+            </button>
             <a href="#"
-              class="cursor-pointer p-2 mt-4 text-white rounded-full bg-gradient-to-r from-green-400 to-blue-400 transition duration-400 hover:from-green-500 hover:to-blue-500">Registrarse</a>
+              class="cursor-pointer p-2 mt-4 text-white rounded-full bg-gradient-to-r from-green-400 to-blue-400 transition duration-400 hover:from-green-500 hover:to-blue-500">
+              Registrarse
+            </a>
           </form>
 
           <a href="#" class="mt-4">¿Has olvidado la contraseña?</a></span>

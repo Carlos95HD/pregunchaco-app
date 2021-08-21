@@ -1,21 +1,23 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
   <!-- Enlace con el css -->
 	<link rel="stylesheet" type="text/css" href="{%static 'css/main.css'%}">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
   <!-- Icono de la pagina -->
-  <link rel="icon" type="image.png" href="{%static 'img/g9.png'%} ">
-  <title>PregunChaco</title>
+  <link rel="icon" type="image.png" href="{%static 'img/base/g9.png'%} ">
+  <title>{% block titulo %} PregunChaco {% endblock titulo %}</title>
 
 </head>
 <body>
   <div class="contenedorPadre" >
       <div class="contenedor contenedor1"  >
-           <img src="{% static 'img/g9.png' %}" class="logo">
+           <img src="{% static 'img/base/g9.png' %}" class="logo">
            <div class="tytle Nombre"> 
               PregunChaco
            </div>
@@ -24,7 +26,6 @@
           <a href="{% url 'login' %}" class="Boton_Login">Ingresar</a>
       </div>
   </div>
-
 	{%block contenido%}
 
  	{%endblock contenido%}
