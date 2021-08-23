@@ -1,18 +1,25 @@
 {% extends 'Base.html' %}
+{% load static %}
 
-{% block titulo %}Iniciar Sesión{% endblock titulo %}
+{% block titulo %}PregunChaco | Iniciar Sesión{% endblock titulo %}
 
 {%block contenido%}
-  
-	<form method="POST">{% csrf_token %}
-		{{form.errors}}
-		<input type="text" name="username" placeholder="USUARIO">
-		<input type="password" name="password" placeholder="CONTRASEÑA">
+<!-- ######### Inicio Login #########-->
+<div class="grid container mx-auto mt-4 register-form p-6 rounded-3xl shadow-2xl w-2/5 justify-center text-center">
+  <img src="{% static 'img/login.svg' %}" class="w-full">
 
-		<input type="submit" name="" value="LOGIN">
+  <form method="POST">
+    {% csrf_token %}
+    {{form.errors}}
+    <input type="text" name="username" placeholder="USUARIO"
+      class="class='border-b col-span-2 p-3 mt-2 mb-10 focus:outline-none'">
+    <input type="password" name="password" placeholder="CONTRASEÑA"
+      class="class='border-b col-span-2 p-3 mt-2 mb-10 focus:outline-none'">
 
-	</form>
-
-  <a href="{% url 'home' %}">Volver al Home</a>
-
+    <input type="submit" name="" value="Iniciar Sesión"
+      class="cursor-pointer p-3 mt-4 text-white rounded-md bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500"">
+    </form>
+    <a href=" {% url 'home' %}" class="text-blue-400">Volver al Inicio</a>
+</div>
+<!-- ######### Fin Login #########-->
 {%endblock contenido%}

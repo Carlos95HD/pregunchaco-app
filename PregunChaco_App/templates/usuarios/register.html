@@ -1,0 +1,35 @@
+{% extends 'Base.html' %}
+{% load tailwind_filters %}
+
+{% block titulo %}PregunChaco | Registrarse{% endblock titulo %}
+
+{%block contenido%}
+
+{% if user.is_authenticated %}
+<p class="text-center mt-4">
+  Ya estas Registrado!
+  <a href="{% url 'home' %}" class="text-blue-500">Volver al Inicio</a>
+</p>
+
+{% else %}
+<!-- ######### Inicio Registro #########-->
+<div class="container mx-auto mt-4 register-form p-6 rounded-3xl shadow-2xl w-2/5">
+  <a href="{% url 'home' %}" class="text-blue-400">Volver al Inicio</a>
+  <h1 class="text-3xl mt-6 mb-6 font-bold">Registrarse</h1>
+  <form action="" method="POST">
+    {% csrf_token %}
+
+    {{ form|crispy }}
+
+    <div class="text-right">
+      <input type="reset" value="Limpiar"
+        class="cursor-pointer p-3 mt-4 mr-2 text-white rounded-md bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500">
+      <input type="submit" value="Registrar"
+        class="cursor-pointer p-3 mt-4 text-white rounded-md bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500">
+    </div>
+  </form>
+</div>
+<!-- ######### Fin Registro #########-->
+{% endif %}
+
+{%endblock contenido%}

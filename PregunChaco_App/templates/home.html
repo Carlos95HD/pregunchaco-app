@@ -19,7 +19,6 @@
       <img src="{% static 'img/home/carpincho.svg' %}" alt="carpincho" class="w-full">
     </div>
 
-
     <div class="self-center text-center">
       <div class="p-6 rounded-3xl px-20 py-24 shadow-2xl">
         <h2 class="font-semibold text-2xl mb-5">¡Bienvenido a PregunChaco!</h2>
@@ -34,20 +33,20 @@
             Iniciar Sesión
           </p>
 
-          <form class="grid grid-cols-2 gap-x-4 mb-6" method="POST">{% csrf_token %}
+          <form class="grid grid-cols-2 gap-x-4 mb-6" method="POST">
+            {% csrf_token %}
             {{form.errors}}
             <input type="text" name="username" placeholder="Usuario"
               class='border-b col-span-2 p-3 mt-2 focus:outline-none'>
             <input type="password" name="password" placeholder="Contraseña"
               class='border-b col-span-2 p-3 mt-2 mb-10 focus:outline-none'>
 
-
-            <button type="submit" name=""
-              class="p-2 mt-4 text-white rounded-full bg-gradient-to-r from-green-400 to-blue-400 transition duration-400 hover:from-green-500 hover:to-blue-500">
+            <button type="submit"
+              class="p-2 mt-4 text-white rounded-full bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500">
               Ingresar
             </button>
-            <a href="#"
-              class="cursor-pointer p-2 mt-4 text-white rounded-full bg-gradient-to-r from-green-400 to-blue-400 transition duration-400 hover:from-green-500 hover:to-blue-500">
+            <a href="{% url 'usuarios:register' %}"
+              class="cursor-pointer p-2 mt-4 text-white rounded-full bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500">
               Registrarse
             </a>
           </form>
@@ -58,7 +57,6 @@
 
     </div>
     <!-- ######### Fin Login #########-->
-
   </div>
 
   {% endblock contenido %}
