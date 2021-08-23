@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.usuarios',
     'crispy_forms',
-    "crispy_tailwind",
+    'crispy_tailwind',
+    'apps.pregunta',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
