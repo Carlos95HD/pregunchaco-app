@@ -1,0 +1,16 @@
+.Box2{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: center;
+
+	padding: 3% 3%;
+
+}
+
+.Modo{
+	width: 30%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
