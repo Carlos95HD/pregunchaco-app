@@ -32,10 +32,15 @@ select:-webkit-autofill:focus {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; 
-  background-color: #E1E1E1;
+  background-color: #E0E0E0;
 
   flex-direction: row;
   justify-content: space-between;
+
+  padding-bottom: 3px;
+  padding-top: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 

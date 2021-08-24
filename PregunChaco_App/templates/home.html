@@ -9,68 +9,26 @@
 
 <body>
   {% block contenido %}
-  <div class="container grid grid-cols-2 mx-auto">
 
-    <div class="p-2 text-center">
-      <h1 class='font-bold text-6xl text-bold'>PregunChaco</h1>
-      <p class="text-xl mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-        been the industry's
-        standard dummy text ever since the 1500s,</p>
-      <img src="{% static 'img/home/carpincho.svg' %}" alt="carpincho" class="w-full">
+  <div class="Container">
+    <div class="Box Hijo1">
+      <h1 class="Titulo1">PregunChaco</h1>
+      <p class="Texto1">Esta es una Páguina web desarrollada por alumnos del informatorio del año 2021 <br> ¡Espero que lo disfruten!</p>
+      <img src="{% static 'img/home/carpincho.svg' %}" alt="carpincho" class="ImagenCarpincho">
     </div>
+    <div class="Box Hijo2">
+      <div class="Recuadro">
+        {% block Recuadro %}
 
-    <div class="self-center text-center grid">
-      <div class="p-6 rounded-3xl px-20 py-24 shadow-2xl">
-        <h2 class="font-semibold text-2xl mb-5">¡Bienvenido a PregunChaco!</h2>
-        <p class="text-xl mb-10">Ingresa a tu cuenta para disfrutar de este increíble juego,
-          consigue las mejores marcas, compite y aprende más sobre esta hermosa
-          provincia.
-        </p>
-
-        {% if user.is_authenticated %}
-          <a href="{% url 'inicio' %}"
-          class="cursor-pointer p-6 font-bold text-2xl text-white rounded-xl bg-gradient-to-r
-           from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500 shadow-lg">
-          Comienza Ahora!
-          </a>
- 
-        {% else %}
-        <!-- ######### Inicio Login #########-->
-        <div>
-          <p class="mt-5 text-xl font-semibold text-center">
-            Iniciar Sesión
-          </p>
-          <!-- Mensaje de Error Login -->
-            {% if form.errors %}
-              <p class="text-red-400">Usuario o contraseña incorrectos</p>
-            {% endif %}
-
-          <form class="grid grid-cols-2 gap-x-4 mb-6" method="POST">
-            {% csrf_token %}
-            <input type="text" name="username" placeholder="Usuario"
-              class='border-b col-span-2 p-3 mt-2 focus:outline-none'>
-            <input type="password" name="password" placeholder="Contraseña"
-              class='border-b col-span-2 p-3 mt-2 mb-10 focus:outline-none'>
-
-            <button type="submit"
-              class="p-2 mt-4 text-white rounded-full  bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500 shadow-lg">
-              Ingresar
-            </button>
-            <a href="{% url 'usuarios:register' %}"
-              class="cursor-pointer p-2 mt-4 text-white rounded-full bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500 shadow-lg">
-              Registrarse
-            </a>
-          <a href="#" class="mt-4 col-span-2">¿Has olvidado la contraseña?</a></span>
-        </div>
-        <!-- ######### Fin Login #########-->
+        {% endblock Recuadro %}
       </div>
-      {% endif %}
     </div>
-
-
   </div>
+
 
   {% endblock contenido %}
 </body>
 
+
+  
 </html>

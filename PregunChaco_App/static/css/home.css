@@ -1,3 +1,81 @@
-h1{
-  color:grey;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --body-font: "Quicksand", sans-serif;
+  --color-light-blue: rgb(149,200,233);
+}
+
+.Container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between; 
+
+	padding-top: 15px;
+	padding-left: 5px;
+	padding-right: 35px;
+	padding-bottom: 15px;
+
+	height: all;
+	width: all;
+	min-height: 350px;
+}
+
+.Box{
+	align-content: stretch;
+	align-items: stretch;
+	flex: 1;
+	padding-left: 7px;
+	padding-right: 7px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-width: 350px;
+	min-height: 350px;
+
+
+}
+.Hijo1{
+	order: 1;
+	padding-left: 25px;
+}
+.Hijo2{
+	display: flex;
+	order: 2;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	padding-right: 5%;
+	padding-top: 2%;
+	padding-bottom: 3%;
+
+}
+.Recuadro{
+	background-color: #E0E0E0;
+	width: 90%;
+	height: 99%;
+	border-radius: 35px;
+	box-shadow: 2px 2px 5px #A7A7A7;
+
+}
+.ImagenCarpincho{
+	width: 75%;
+	height: 75%;
+	margin: auto;
+}
+.Titulo1{
+	align-content: center;
+	color: black;
+	font-family: Quicksand;
+	text-align: center;
+	line-height: 120%;
+	font-size: 250%;
+	font-weight: bold;
+
+}
+.Texto1{
+	align-content: center;
+	color: black;
+	font-family: Quicksand;
+	text-align: center;
+	font-size: 140%;
 }
