@@ -2,10 +2,14 @@ from django.db import models
 
 
 class categoria(models.Model):
-    Category = models.CharField(
+
+    Categoria = models.CharField(
         verbose_name=("Categoria"),
         max_length=250, blank=True,
         unique=True, null=True)
+
+    def __str__(self):
+    	return self.Categoria
 
 
 class Pregunta (models.Model):
