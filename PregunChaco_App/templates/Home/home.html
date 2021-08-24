@@ -1,0 +1,67 @@
+{%extends 'Base.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% block titulo %}Inicio | PregunChaco{% endblock titulo %}
+</head>
+
+<body>
+  {% block contenido %}
+
+  <div class="Container">
+    <div class="Box Hijo1">
+      <h1 class="Titulo1">PregunChaco</h1>
+      <p class="Texto1">Esta es una Páguina web desarrollada por alumnos del informatorio del año 2021 <br> ¡Espero que lo disfruten!</p>
+      <img src="{% static 'img/home/carpincho.svg' %}" alt="carpincho" class="ImagenCarpincho">
+    </div>
+    <div class="Box Hijo2">
+      <div class="Recuadro">
+            <h2 class="Titulo2">¡Bienvenido a PregunChaco!</h2>
+            <p class="Texto2">Ingresa a tu cuenta para disfrutar de este increíble juego,
+          consigue las mejores marcas, compite y aprende más sobre esta hermosa
+          provincia.</p>
+            {% if user.is_authenticated %}
+            <a href="{% url 'inicio' %}">¡Comienza Ahora!</a>
+            {% else %}
+              <!-- ######### Inicio Login #########-->
+              <div>
+                <p class="Texto3">
+                  Iniciar Sesión
+                </p>
+                <!-- Mensaje de Error Login -->
+                  {% if form.errors %}
+                    <p class="Error1">Usuario o contraseña incorrectos</p>
+                  {% endif %}
+
+                <form class="Formulario" method="POST">
+                  {% csrf_token %}
+                  <input type="text" name="username" placeholder="Usuario"
+                    class='Campos'>
+                  <input type="password" name="password" placeholder="Contraseña"
+                    class='Campos'>
+
+                  <button type="submit"
+                    class="Boton">
+                    Ingresar
+                  </button>
+                  <a href="{% url 'usuarios:register' %}"
+                    class="Boton">
+                    Registrarse
+                  </a>
+                <a href="#" class="Texto4">¿Has olvidado la contraseña?</a></span>
+              </div>
+              <!-- ######### Fin Login #########-->
+            {% endif %}
+      </div>
+    </div>
+  </div>
+
+
+  {% endblock contenido %}
+</body>
+
+
+  
+</html>

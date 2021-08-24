@@ -71,10 +71,11 @@ select:-webkit-autofill:focus {
 }
 
 .Nombre{
-  color: #1053DB;
+  color: #1830FF;
   font-weight: bold;
   padding-left: 7%;
   font-size: xx-large;
+  text-shadow: 2px 2px 5px #A7A7A7;
 }
 
 .contenedorPie{

@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/', views.inicio, name='inicio'),
     path('modo/', views.modo, name='modo'),
-    path('',auth.LoginView.as_view(template_name = 'home.html'), name= 'home'),
+    path('',auth.LoginView.as_view(template_name = 'Home/home.html'), name= 'home'),
     path('logout/', auth.LogoutView.as_view(), name = 'logout'),
     #PATH REDIRECCION A LAS APPS
     path('usuarios/',include('apps.usuarios.urls')),

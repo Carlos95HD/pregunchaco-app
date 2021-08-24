@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def home(request): 
-	return render(request, 'home.html')
+	return render(request, 'Home/home.html')
 
 def inicio(request): 
 	return render(request, 'game/inicio.html')
