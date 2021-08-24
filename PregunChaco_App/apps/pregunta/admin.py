@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Pregunta, ElegirRespuesta, categoria
+
+
+admin.site.register(Pregunta)
+admin.site.register(ElegirRespuesta)
+admin.site.register(categoria)
+

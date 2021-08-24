@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_tailwind',
     'apps.pregunta',
+    'apps.categoria',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
