@@ -18,15 +18,15 @@
         El tipo de juego es trivial y puede tener una o más respuestas correctas,
         solo tienes que estar atento!
       </p>
-      <a href="{% url 'home' %}" class="text-center text-xl p-3 mt-4 text-white rounded-xl bg-blue-400 hover:bg-blue-500">
+      <a href="{% url 'home' %}" class="text-center text-xl p-3 mt-4 text-white rounded-xl bg-blue-400 shadow-lg hover:bg-blue-500">
         Volver al Inicio
       </a>
     </div>
 
     <div class="grid grid-cols-4 content-center">
-      <!-- <a href="#"><img src="{% static 'img/game/pers01.svg' %}" alt=""></a> -->
+      <img src="{% static 'img/game/personaje1.svg' %}" alt="Jugar" class="col-span-4 mx-auto w-1/2">
       <a href="{% url 'modo' %}"
-          class="text-center col-start-2 col-span-2 font-bold text-5xl p-2 text-white rounded-xl bg-blue-400 hover:bg-blue-500">
+          class="text-center shadow-lg col-start-2 col-span-2 font-bold text-6xl p-3 text-white rounded-xl bg-blue-400 hover:bg-blue-500">
           Jugar
       </a>
     </div>
