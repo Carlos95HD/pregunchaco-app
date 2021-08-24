@@ -19,23 +19,33 @@
       <img src="{% static 'img/home/carpincho.svg' %}" alt="carpincho" class="w-full">
     </div>
 
-    <div class="self-center text-center">
+    <div class="self-center text-center grid">
       <div class="p-6 rounded-3xl px-20 py-24 shadow-2xl">
         <h2 class="font-semibold text-2xl mb-5">¡Bienvenido a PregunChaco!</h2>
         <p class="text-xl mb-10">Ingresa a tu cuenta para disfrutar de este increíble juego,
           consigue las mejores marcas, compite y aprende más sobre esta hermosa
-          ciudad
+          provincia.
         </p>
 
+        {% if user.is_authenticated %}
+          <a href="{% url 'inicio' %}"
+          class="cursor-pointer p-6 font-bold text-2xl text-white rounded-xl bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500">
+          Comienza Ahora!
+          </a>
+ 
+        {% else %}
         <!-- ######### Inicio Login #########-->
         <div>
           <p class="mt-5 text-xl font-semibold text-center">
             Iniciar Sesión
           </p>
+          <!-- Mensaje de Error Login -->
+            {% if form.errors %}
+              <p class="text-red-400">Usuario o contraseña incorrectos</p>
+            {% endif %}
 
           <form class="grid grid-cols-2 gap-x-4 mb-6" method="POST">
             {% csrf_token %}
-            {{form.errors}}
             <input type="text" name="username" placeholder="Usuario"
               class='border-b col-span-2 p-3 mt-2 focus:outline-none'>
             <input type="password" name="password" placeholder="Contraseña"
@@ -49,14 +59,14 @@
               class="cursor-pointer p-2 mt-4 text-white rounded-full bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500">
               Registrarse
             </a>
-          </form>
-
-          <a href="#" class="mt-4">¿Has olvidado la contraseña?</a></span>
+          <a href="#" class="mt-4 col-span-2">¿Has olvidado la contraseña?</a></span>
         </div>
+        <!-- ######### Fin Login #########-->
       </div>
-
+      {% endif %}
     </div>
-    <!-- ######### Fin Login #########-->
+
+
   </div>
 
   {% endblock contenido %}

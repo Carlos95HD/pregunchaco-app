@@ -5,3 +5,6 @@ def home(request):
 
 def inicio(request): 
 	return render(request, 'game/inicio.html')
+
+def modo(request): 
+	return render(request, 'game/modo.html')

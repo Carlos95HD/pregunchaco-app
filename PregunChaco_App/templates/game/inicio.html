@@ -1,16 +1,35 @@
 {%extends 'Base.html'%}
 {% load static %}
   <head>
-    {% block titulo %} PregunChaco | Como Jugar? {% endblock titulo %}
+    {% block titulo %} PregunChaco | ¿Como Jugar? {% endblock titulo %}
   </head>
 <body>
 
   {% block contenido %}
-  <div class="container grid grid-cols-2 mx-auto">
-    <div class="p-2 text-center">
-      <h1>¿Cómo Jugar?</h1>
-    </div> 
+  <div class="container grid grid-cols-2 mx-auto container_inicio">
 
+    <div class="self-center grid shadow-2xl p-10 rounded-3xl">
+      <h1 class="col-span-4 font-bold text-5xl text-bold">¿Cómo Jugar?</h1>
+      <p class="col-span-4 mt-4 text-2xl">
+        Selecciona el modo de juego, puedes elegir las categorías
+        puedes elegir las categorias o puedes dejar que el azar te elija una. <br>
+        Las categorias de preguntas son: Ciencia y Educación, Geografia, Historia
+        Entrenamiento, Deportes, Economia, Cultura y Arte.<br>
+        El tipo de juego es trivial y puede tener una o más respuestas correctas,
+        solo tienes que estar atento!
+      </p>
+      <a href="{% url 'home' %}" class="text-center text-xl p-3 mt-4 text-white rounded-xl bg-blue-400 hover:bg-blue-500">
+        Volver al Inicio
+      </a>
+    </div>
+
+    <div class="grid grid-cols-4 content-center">
+      <!-- <a href="#"><img src="{% static 'img/game/pers01.svg' %}" alt=""></a> -->
+      <a href="{% url 'modo' %}"
+          class="text-center col-start-2 col-span-2 font-bold text-5xl p-2 text-white rounded-xl bg-blue-400 hover:bg-blue-500">
+          Jugar
+      </a>
+    </div>
   </div>
   
   {% endblock contenido %}

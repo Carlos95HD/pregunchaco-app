@@ -8,6 +8,7 @@
   <!-- Enlace con el css -->
 	<link rel="stylesheet" type="text/css" href="{%static 'css/main.css'%}">
 	<link rel="stylesheet" type="text/css" href="{%static 'css/home.css'%}">
+	<link rel="stylesheet" type="text/css" href="{%static 'css/game/inicio.css'%}">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
   <!-- Icono de la pagina -->
@@ -31,12 +32,6 @@
         </span>
         <a href="{% url 'logout' %}" class="Boton_Login">Salir</a>
       </div>
-
-      {% else %}
-      <div class="contenedor contenedor2">
-        <a href="{% url 'login' %}" class="Boton_Login">Ingresar</a>
-      </div>
-
       {% endif %}
 
   </div>
