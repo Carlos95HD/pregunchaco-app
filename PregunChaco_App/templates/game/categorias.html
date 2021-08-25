@@ -21,7 +21,7 @@
     {% for c in categorias %}
       <div class="Cat Categoria{{c.id}}">
 
-        <a href="{% url 'pregunta:preguntas' %}">
+        <a href="{% url 'pregunta:filtradas' c.id  %}">
           <img src="{% static ''%}img/game/categorias/personaje_0{{c.id}}.svg">
           <p class="TextCat TextCat1">{{c}}</p>
         </a>
