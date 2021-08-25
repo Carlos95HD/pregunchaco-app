@@ -13,5 +13,5 @@ def listar_categoria(request):
 
 def listar_pregunta(request):
  	preguntas = Pregunta.objects.all()
- 	context = {"preguntas":Pregunta}
+ 	context = {"preguntas":preguntas}
  	return render(request, 'game/preguntas.html', context)
