@@ -9,8 +9,8 @@ def inicio(request):
 def modo(request): 
 	return render(request, 'game/modo.html')
 
-def categorias(request):
-	return render(request, 'game/categorias.html')
+# def categorias(request):
+# 	return render(request, 'game/categorias.html')
 
 def preguntas(request):
 	return render (request, 'game/preguntas.html')

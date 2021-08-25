@@ -16,7 +16,19 @@
   </a>
 
 <div class="Box1">
-  	<div class="Cat Categoria1">
+    
+    <!-- CARGA LAS CATEGORIAS DESDE LA BASE DE DATOS -->
+    {% for c in categorias %}
+      <div class="Cat Categoria{{c.id}}">
+
+        <a href="{% url 'preguntas' %}">
+          <img src="{% static ''%}img/game/categorias/personaje_0{{c.id}}.svg">
+          <p class="TextCat TextCat1">{{c}}</p>
+        </a>
+
+      </div>
+    {% endfor %}
+  	<!-- <div class="Cat Categoria1">
   		<a href="{% url 'preguntas' %}">
   			<img src="{% static 'img/game/categorias/personaje_01.svg' %}">
   			<p class="TextCat TextCat1"></p>
@@ -57,7 +69,7 @@
   			<img src="{% static 'img/game/categorias/personaje_07.svg' %}">
   			<p class="TextCat TextCat7"></p>
   		 </a>
-  	</div>
+  	</div> -->
 
   </div>
 </div>
