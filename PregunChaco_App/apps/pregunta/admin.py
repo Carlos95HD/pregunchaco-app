@@ -1,9 +1,24 @@
+from typing import ClassVar
 from django.contrib import admin
-
+from django.db.models.fields import AutoField
 from .models import Pregunta, ElegirRespuesta, categoria
 
+class ElegirRespuestaInline(admin.TabularInline):
+    model = ElegirRespuesta
+    can_delete = False
+    # min_num = 2
+    # max_num = 4
+class PreguntaAdmin(admin.ModelAdmin):
+    model = Pregunta
+    inlines = (ElegirRespuestaInline,)
+    list_display = ['texto']
+    list_filter=['categorias']
 
-admin.site.register(Pregunta)
-admin.site.register(ElegirRespuesta)
+class ElegirRespuestaAdmin(admin.ModelAdmin):
+    list_display = ['texto','pregunta']
+
+
+admin.site.register(Pregunta, PreguntaAdmin)
+admin.site.register(ElegirRespuesta, ElegirRespuestaAdmin)
 admin.site.register(categoria)
 
