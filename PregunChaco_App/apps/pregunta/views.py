@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import categoria, Pregunta
+from .models import categoria, Pregunta, ElegirRespuesta
 from django.views.generic import DetailView
 # Create your views here.
 
@@ -23,3 +23,6 @@ def FiltrarPregunta(request, pk):
  	filtradas = Pregunta.objects.filter(id= pk)
  	context = {"preguntas":filtradas}
  	return render(request, 'game/preguntas.html', context)
+
+
+
