@@ -24,6 +24,10 @@ select:-webkit-autofill:focus {
   font-family: var(--body-font);
 }
 
+.container__contenido{
+  min-height: 790px;
+}
+
 .logo {
   width: 4rem;
 }

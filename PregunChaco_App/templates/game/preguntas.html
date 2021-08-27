@@ -1,18 +1,15 @@
-{%extends 'Base.html'%}
+{% extends 'Base.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  {% block titulo %}Preguntas | PregunChaco{% endblock titulo %}
 </head>
 <body>
 	{% block contenido %}
     {% for c in preguntas %}
 
-        
-          
           <p class="TextCat TextCat1">{{c}}</p>
-        
 
     
     {% endfor %}

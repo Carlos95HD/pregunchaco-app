@@ -37,10 +37,20 @@
       {% endif %}
 
   </div>
+
+  <div class="container__contenido">
 	{%block contenido%}
 
  	{%endblock contenido%}
+  </div>
 
+   <footer class="bg-gray-300 h-24 flow-root">
+     <div class="grid grid-cols-3 justify-items-center mt-4">
+       <img src="{% static 'img/base/footer/ministerio.svg' %}" alt="" class="w-96">
+       <img src="{% static 'img/base/footer/chaco.svg' %}" alt="" class="w-96">
+       <img src="{% static 'img/base/footer/informatorio.svg'%}" alt="" class="w-80">
+     </div>
+   </footer>
 
 </body>
 </html>
