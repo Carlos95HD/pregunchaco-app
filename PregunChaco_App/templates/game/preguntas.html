@@ -7,11 +7,16 @@
 </head>
 <body>
 	{% block contenido %}
-    {% for c in preguntas %}
-   
 
-          <p class="TextCat TextCat1">{{c}}</p>
+    {% for p in pregunta %}
+    <p class="font-bold">Pregunta: {{p}}</p>
 
-	{% endfor %} 
+    {% for respuesta in p.preguntas.all %}
+     <p class="text-gray-500 ml-4">{{ respuesta }}</p>
+
+    {% endfor %}
+    {% endfor %}
+
+  {% endblock contenido %}
 </body>
 </html>

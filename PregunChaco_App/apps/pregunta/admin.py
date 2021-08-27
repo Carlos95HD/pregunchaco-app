@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db.models.fields import AutoField
-from .models import Pregunta, ElegirRespuesta, categoria, PreguntasRespondidas
+from .models import Pregunta, ElegirRespuesta, categoria, Jugador, PreguntasRespondidas
 from .forms import ElegirInlineFormset
 
 class ElegirRespuestaInline(admin.TabularInline):
@@ -13,7 +13,7 @@ class ElegirRespuestaInline(admin.TabularInline):
 class PreguntaAdmin(admin.ModelAdmin):
     model = Pregunta
     inlines = (ElegirRespuestaInline,)
-    list_display = ['texto']
+    list_display = ['texto', "categorias"]
     list_filter=['categorias']
 
 class ElegirRespuestaAdmin(admin.ModelAdmin):
@@ -30,4 +30,5 @@ class PreguntasRespondidasAdmin(admin.ModelAdmin):
 admin.site.register(Pregunta, PreguntaAdmin)
 admin.site.register(ElegirRespuesta, ElegirRespuestaAdmin)
 admin.site.register(categoria)
+admin.site.register(Jugador)
 admin.site.register(PreguntasRespondidas)
