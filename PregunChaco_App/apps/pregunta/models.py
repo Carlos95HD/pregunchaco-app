@@ -59,12 +59,14 @@ class Jugador(models.Model):
             pregunta_respondida.correcta = True
             pregunta_respondida.puntaje_obtenido = respuesta_seleccionada.pregunta.max_puntaje
             pregunta_respondida.respuesta = respuesta_seleccionada
+            #instanciamos la funcion actualizar puntajes
+            self.actualizar_puntaje()
+
         else:
             pregunta_respondida.respuesta = respuesta_seleccionada
         pregunta_respondida.save()
 
-        #instanciamos la funcion actualizar puntajes
-        self.actualizar_puntaje()
+
 
     #Actualiza puntajes en el jugador_user
     def actualizar_puntaje(self):
