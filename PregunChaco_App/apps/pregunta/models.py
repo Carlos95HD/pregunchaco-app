@@ -34,7 +34,7 @@ class ElegirRespuesta(models.Model):
 
 class Jugador(models.Model):
     jugador = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    puntaje_total = models.DecimalField(verbose_name='Puntaje Total', default=0, decimal_places=2, max_digits=10)
+    puntaje_total = models.DecimalField(verbose_name='Puntaje Total', default=1, decimal_places=2, max_digits=10, null=True)
 
     def crear_intentos(self, pregunta):
         intento = PreguntasRespondidas( pregunta = pregunta, jugador_user = self )
@@ -59,14 +59,17 @@ class Jugador(models.Model):
             pregunta_respondida.correcta = True
             pregunta_respondida.puntaje_obtenido = respuesta_seleccionada.pregunta.max_puntaje
             pregunta_respondida.respuesta = respuesta_seleccionada
-            #instanciamos la funcion actualizar puntajes
-            self.actualizar_puntaje()
 
         else:
             pregunta_respondida.respuesta = respuesta_seleccionada
         pregunta_respondida.save()
 
+        #instanciamos la funcion actualizar puntajes
+        self.actualizar_puntaje()
 
+    def vaciar_respondidas_user(self):
+        respondidas = PreguntasRespondidas.objects.filter(jugador_user=self) #Obtiene preguntas respondidas del usuario
+        respondidas.delete() #Elimina las respondidas
 
     #Actualiza puntajes en el jugador_user
     def actualizar_puntaje(self):

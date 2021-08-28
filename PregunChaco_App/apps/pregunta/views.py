@@ -5,6 +5,9 @@ from .models import PreguntasRespondidas, categoria, Jugador
 # Create your views here.
 
 def listar_categoria(request):
+    JugadorUser, created = Jugador.objects.get_or_create( jugador = request.user ) #Obtiene el jugador del usuario al entrar a categoria
+    JugadorUser.vaciar_respondidas_user()
+
     categorias = categoria.objects.all()
     context = {"categorias":categorias}
     return render(request,'game/categorias.html', context)
@@ -40,7 +43,7 @@ def tabla_posiciones(request):
 
 def jugar(request, pk):
     context={}
-    JugadorUser, created = Jugador.objects.get_or_create( jugador = request.user ) #Crea el usuario del jugador al elegir la categoria
+    JugadorUser, created = Jugador.objects.get_or_create( jugador = request.user ) #Crea el jugador del usuario al elegir la categoria
 
     if request.method == 'POST':
         pregunta_pk = request.POST.get('pregunta_pk')
