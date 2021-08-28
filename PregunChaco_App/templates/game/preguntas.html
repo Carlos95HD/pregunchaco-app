@@ -1,21 +1,50 @@
-{% extends 'Base.html' %}
+{%extends 'Base.html'%}
 {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-  {% block titulo %}Preguntas | PregunChaco{% endblock titulo %}
+  {% block titulo %}PregunChaco{% endblock titulo %}
 </head>
 <body>
 	{% block contenido %}
 
-    {% for p in pregunta %}
-    <p class="font-bold">Pregunta: {{p}}</p>
+    {% if pregunta is None %}
+      <div class="container">
+        <div>
+          <h1>
+            Respondiste todas las preguntas. Mira la tabla de posiciones.
+          </h1>
 
-    {% for respuesta in p.preguntas.all %}
-     <p class="text-gray-500 ml-4">{{ respuesta }}</p>
+          <a href="#">ver Aqui</a>
+        </div>
+      </div>
 
-    {% endfor %}
-    {% endfor %}
+    {% else %}
+
+    <div class="container">
+      <div>
+        <h3>
+          {{pregunta.texto}}
+        </h3>
+
+        <form method="POST">
+          {% csrf_token %}
+
+          <input type="hidden" name='pregunta_pk' value="{{pregunta.pk}}">
+
+          {% for opcion in pregunta.opcion.all %}
+          <input type="radio" name="respuesta_pk" value="{{opcion.pk}}" id="choice-{{forloop.counter}}">
+          <label for="choice-{{forloop.counter}}">
+              {{opcion.texto}}
+          </label>
+          {% endfor %}
+
+          <button type="submit" class="bg-green-500">Enviar</button>
+        </form>
+      </div> 
+    </div>
+
+    {% endif %}
 
   {% endblock contenido %}
 </body>

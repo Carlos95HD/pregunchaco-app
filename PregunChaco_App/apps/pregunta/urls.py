@@ -1,11 +1,12 @@
 from django.urls import path
-from .views import listar_categoria,jugar
+from .views import listar_categoria, jugar, resultado_preguntas
 
 app_name = 'pregunta'
 
 urlpatterns = [
 	path('categoria/', listar_categoria, name = 'categoria'),
 	path('jugar/<int:pk>', jugar, name= 'jugar'),
+	path('resultado/<int:pregunta_respondida_pk>/', resultado_preguntas, name= 'resultado'),
 ]
 
 
