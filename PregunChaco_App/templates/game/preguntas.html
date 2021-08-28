@@ -15,7 +15,7 @@
             Respondiste todas las preguntas. Mira la tabla de posiciones.
           </h1>
 
-          <a href="#">ver Aqui</a>
+          <a href="{% url 'pregunta:tabla' %}">ver Aqui</a>
         </div>
       </div>
 
@@ -38,7 +38,7 @@
               {{opcion.texto}}
           </label>
           {% endfor %}
-
+          <br>
           <button type="submit" class="bg-green-500">Enviar</button>
         </form>
       </div> 

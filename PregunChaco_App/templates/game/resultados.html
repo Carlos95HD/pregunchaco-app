@@ -1,0 +1,44 @@
+{%extends 'Base.html'%}
+
+{% block contenido %}
+
+<div class="grid grid-cols-2 p-2">
+  <h3>{{respondida.pregunta.texto|safe}}</h3>
+  <p>
+    <strong>Tu respuesta:</strong>
+    {{respondida.respuesta.texto|safe}}
+  </p>
+
+  <!-- Si la respuesta es Correcta -->
+  {% if respondida.respuesta.correcta %}
+
+  <span class="text-white bg-green-500 w-24">Respuesta Correcta!</span>
+
+  <!-- Si la respuesta es Incorrecta -->
+  {% else %}
+
+  <h4 class="text-white bg-red-500 w-24">Respuesta Incorrecta!</h4>
+
+  {% for respuesta in respondida.pregunta.opcion.all %}
+
+  {% if respuesta.correcta %}
+
+  <h4>La respuesta correcta es: <span class="text-white bg-green-500">{{respuesta}}</span></h4>
+
+  {% endif %}
+
+  {% endfor %}
+
+  {% endif %}
+
+  <!-- continuar a la siguiente pregunta -->
+  <a href="{% url 'pregunta:jugar' respondida.pregunta.categorias.id  %}">
+    <button class="bg-blue-400 p-2 text-white">
+      Siguiente
+    </button>
+  </a>
+
+</div>
+
+
+{% endblock contenido %}

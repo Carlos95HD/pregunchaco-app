@@ -25,6 +25,18 @@ def listar_categoria(request):
 #  	context = {"preguntas":filtradas}
 #  	return render(request, 'game/preguntas.html', context)
 
+#Tabla de posiciones Mejores Jugadores
+def tabla_posiciones(request):
+    total_jugadores = Jugador.objects.order_by('-puntaje_total')[:10]
+    contador = total_jugadores.count()
+
+    context = {
+
+        'total_jugadores':total_jugadores,
+        'contar_user':contador
+    }
+
+    return render(request, 'game/tablaMejores.html', context)
 
 def jugar(request, pk):
     context={}
@@ -60,4 +72,5 @@ def resultado_preguntas(request, pregunta_respondida_pk):
     context = {
         'respondida':respondida
     }
+
     return render(request, 'game/resultados.html', context)

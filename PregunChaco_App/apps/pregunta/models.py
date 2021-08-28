@@ -41,10 +41,11 @@ class Jugador(models.Model):
         intento.save()
 
     def obtener_nuevas_preguntas(self, pk):
+        #filtra las preguntas respondidas
         respondidas = PreguntasRespondidas.objects.filter(jugador_user=self).values_list('pregunta__pk', flat=True)
-        # preguntas_restantes = Pregunta.objects.exclude(pk__in=respondidas)
+        #filtra la categoria y excluye las respondidas
         preguntas_restantes = Pregunta.objects.filter(categorias_id=pk).exclude(pk__in=respondidas)
-        
+
         if not preguntas_restantes.exists():
             return None
         return random.choice(preguntas_restantes)
@@ -58,8 +59,20 @@ class Jugador(models.Model):
             pregunta_respondida.correcta = True
             pregunta_respondida.puntaje_obtenido = respuesta_seleccionada.pregunta.max_puntaje
             pregunta_respondida.respuesta = respuesta_seleccionada
-
+        else:
+            pregunta_respondida.respuesta = respuesta_seleccionada
         pregunta_respondida.save()
+
+        #instanciamos la funcion actualizar puntajes
+        self.actualizar_puntaje()
+
+    #Actualiza puntajes en el jugador_user
+    def actualizar_puntaje(self):
+        puntaje_actualizado = self.intentos.filter(correcta=True).aggregate(
+        models.Sum('puntaje_obtenido'))['puntaje_obtenido__sum']
+
+        self.puntaje_total = puntaje_actualizado
+        self.save()
 
 class PreguntasRespondidas(models.Model):
 	jugador_user = models.ForeignKey(Jugador, on_delete=models.CASCADE, related_name='intentos')
