@@ -36,7 +36,12 @@
         <span class="mr-2 uppercase font-bold">
           {{ user.username }}
         </span>
-        <a href="{% url 'logout' %}" class="Boton_Login">Salir</a>
+        <a href="{% url 'pregunta:tabla' %}">
+          <img src="{% static 'img/Logo_Ranking.png' %}" class="logoR">
+        </a>
+        <a href="{% url 'logout' %}">
+          <img src="{% static 'img/salir.png' %}" class="logoS" >
+        </a>
       </div>
       {% endif %}
 

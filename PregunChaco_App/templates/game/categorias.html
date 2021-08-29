@@ -22,7 +22,7 @@
       <div class="Cat Categoria{{c.id}}">
         <a href="{% url 'pregunta:jugar' c.id  %}">
           <img src="{% static ''%}img/game/categorias/personaje_{{c.id}}.svg">
-          <p class="TextCat TextCat">{{c}}</p>
+          <p class="TextCat TextCat{{c.id}}">{{c}}</p>
         </a>
 
       </div>
