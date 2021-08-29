@@ -20,57 +20,14 @@
     <!-- CARGA LAS CATEGORIAS DESDE LA BASE DE DATOS -->
     {% for c in categorias %}
       <div class="Cat Categoria{{c.id}}">
-
         <a href="{% url 'pregunta:jugar' c.id  %}">
-          <img src="{% static ''%}img/game/categorias/personaje_0{{c.id}}.svg">
-          <p class="TextCat TextCat1">{{c}}</p>
+          <img src="{% static ''%}img/game/categorias/personaje_{{c.id}}.svg">
+          <p class="TextCat TextCat">{{c}}</p>
         </a>
 
       </div>
     {% endfor %}
-  	<!-- <div class="Cat Categoria1">
-  		<a href="{% url 'preguntas' %}">
-  			<img src="{% static 'img/game/categorias/personaje_01.svg' %}">
-  			<p class="TextCat TextCat1"></p>
-  		 </a>
-  	</div>
-  	<div class="Cat Categoria2">
-  		<a href="{% url 'preguntas' %}">
-  			<img src="{% static 'img/game/categorias/personaje_02.svg' %}">
-  			<p class="TextCat TextCat2"></p>
-  		 </a>
-  	</div>
-  	<div class="Cat Categoria3">
-  		<a href="{% url 'preguntas' %}">
-  			<img src="{% static 'img/game/categorias/personaje_03.svg' %}">
-  			<p class="TextCat TextCat3"></p>
-  		 </a>
-  	</div>
-  	<div class="Cat Categoria4">
-  		<a href="{% url 'preguntas' %}">
-  			<img src="{% static 'img/game/categorias/personaje_04.svg' %}">
-  			<p class="TextCat TextCat4"></p>
-  		 </a>
-  	</div>
-  	<div class="Cat Categoria5">
-  		<a href="{% url 'preguntas' %}">
-  			<img src="{% static 'img/game/categorias/personaje_05.svg' %}">
-  			<p class="TextCat TextCat5"></p>
-  		 </a>
-  	</div>
-  	<div class="Cat Categoria6">
-  		<a href="{% url 'preguntas' %}">
-  			<img src="{% static 'img/game/categorias/personaje_06.svg' %}">
-  			<p class="TextCat TextCat6"></p>
-  		 </a>
-  	</div>
-  	<div class="Cat Categoria7">
-  		<a href="{% url 'preguntas' %}">
-  			<img src="{% static 'img/game/categorias/personaje_07.svg' %}">
-  			<p class="TextCat TextCat7"></p>
-  		 </a>
-  	</div> -->
-
+  	
   </div>
 </div>
 

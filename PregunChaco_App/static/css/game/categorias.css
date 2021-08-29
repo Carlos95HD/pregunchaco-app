@@ -13,3 +13,33 @@
 	width: 20%;
 	margin: 1%;
 }
+
+.TextCat{
+	width: 60%;
+	height: 30%;
+	border-radius: 25px;
+	align-self: center;
+	font-size: large;
+}
+
+.TextCat1{   /*Geografia */
+	background-color: #105699; 
+}
+.TextCat2{  /* Cultura y Arte */  
+	background-color: #B51D54;
+}
+.TextCat3{  /* Hisoria */ 
+	background-color: #BBA730;
+}
+.TextCat4{  /* Deporte */
+	background-color: #D07E1C;
+}
+.TextCat5{  /* Economia */
+	background-color: #65318A;
+}
+.TextCat6{  /* Ciencia y Educacion */
+	background-color: #16954D;
+}
+.TextCat7{  /* Entreteniminto */
+	background-color: #B43D81;
+}

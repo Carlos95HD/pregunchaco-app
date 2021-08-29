@@ -21,10 +21,14 @@
 <body>
   <div class="contenedorPadre" >
       <div class="contenedor contenedor1"  >
+          <a href="{% url 'home' %}">
            <img src="{% static 'img/base/g9.png' %}" class="logo">
+          </a>
+          <a href="{% url 'home' %}">
            <div class="tytle Nombre"> 
               PregunChaco
            </div>
+          </a>
      </div>
 
       {% if user.is_authenticated %}

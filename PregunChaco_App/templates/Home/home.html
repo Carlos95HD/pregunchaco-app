@@ -23,7 +23,7 @@
           consigue las mejores marcas, compite y aprende más sobre esta hermosa
           provincia.</p>
             {% if user.is_authenticated %}
-            <a href="{% url 'inicio' %}">¡Comienza Ahora!</a>
+            <a class="grid grid-cols-3 justify-items-center mt-4" href="{% url 'inicio' %}" >¡Comienza Ahora!</a>
             {% else %}
               <!-- ######### Inicio Login #########-->
               <div>
