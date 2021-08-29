@@ -25,7 +25,23 @@
 
       <div class="Sub Sub1">
           <img src="{% static ''%}img/game/categorias/personaje_{{cat}}.svg" class="Imag"> 
-          <p class="TextCat TextCat{{cat}}">{{cat}}</p>
+          <p class="TextCat TextCat{{cat}}">
+              {% if cat == 1 %}
+              Geografia
+              {% elif cat == 2 %}
+              Cultura y Arte 
+              {% elif cat == 3 %}
+              Historia
+              {% elif cat == 4 %}
+              Deporte
+              {% elif cat == 5 %}
+              Economia
+              {% elif cat == 6 %}
+              Ciencia y Educacion
+              {% elif cat == 7 %}
+              Entreteniminto
+              {% endif %}
+          </p>
       </div>
         <div class="Sub Sub2">
           <div class="Preg">

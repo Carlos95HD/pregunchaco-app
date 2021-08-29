@@ -27,7 +27,6 @@
 	font-size: 170%;
 	justify-content: center;
 	font-weight: bold;
-	cursor: pointer;
 	align-self: center;
 
 }
@@ -36,34 +35,47 @@
 	background-color: #105699;
 	border-color: #03498c;
 	color:#ffffff;
+	text-align: center;
+	font-size: 100%;
 }
 .TextCat2{  /* Cultura y Arte */  
 	background-color: #B51D54;
 	border-color: #03498c;
 	color:#ffffff;
+	text-align: center;
+
 }
-.TextCat3{  /* Hisoria */ 
+.TextCat3{  /* Historia */ 
 	background-color: #BBA730;
 	border-color: #03498c;
 	color:#ffffff;
+	text-align: center;
+
 }
 .TextCat4{  /* Deporte */
 	background-color: #D07E1C;
 	border-color: #03498c;
 	color:#ffffff;
+	text-align: center;
+
 }
 .TextCat5{  /* Economia */
 	background-color: #65318A;
 	border-color: #03498c;
 	color:#ffffff;
+	text-align: center;
+
 }
 .TextCat6{  /* Ciencia y Educacion */
 	background-color: #16954D;
 	border-color: #03498c;
 	color:#ffffff;
+	text-align: center;
+
 }
 .TextCat7{  /* Entreteniminto */
 	background-color: #B43D81;
 	border-color: #03498c;
 	color:#ffffff;
+	text-align: center;
 }
