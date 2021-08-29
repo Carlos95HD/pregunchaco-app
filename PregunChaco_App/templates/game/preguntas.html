@@ -9,7 +9,7 @@
 	{% block contenido %}
 
     {% if pregunta is None %}
-      <div class="container">
+      <div class="container1">
         <div>
           <h1>
             Respondiste todas las preguntas. Mira la tabla de posiciones.
@@ -21,31 +21,36 @@
 
     {% else %}
 
-    <div class="container">
-      <div>
-        <h3>
+    <div class="container2">
+
+      <div class="Sub Sub1">
+          <img src="{% static ''%}img/game/categorias/personaje_{{cat}}.svg" class="Imag"> 
+          <p class="TextCat TextCat{{cat}}">{{cat}}</p>
+      </div>
+        <div class="Sub Sub2">
+          <div class="Preg">
+           <h3>
           {{pregunta.texto}}
-        </h3>
-
-        <form method="POST">
+            </h3> <br>
+          </div>
+         <form method="POST">
           {% csrf_token %}
-
-          <input type="hidden" name='pregunta_pk' value="{{pregunta.pk}}">
-
-          {% for opcion in pregunta.opcion.all %}
-          <input type="radio" name="respuesta_pk" value="{{opcion.pk}}" id="choice-{{forloop.counter}}">
-          <label for="choice-{{forloop.counter}}">
-              {{opcion.texto}}
-          </label>
-          {% endfor %}
-          <br>
-          <button type="submit" class="bg-green-500">Enviar</button>
+            <input type="hidden" name='pregunta_pk' value="{{pregunta.pk}}" class="Quiz">
+            {% for opcion in pregunta.opcion.all %}
+              <label for="choice-{{forloop.counter}}" class="Res">
+                <input type="radio" name="respuesta_pk" value="{{opcion.pk}}" id="choice-{{forloop.counter}}" class="Rad">
+                <span class="check"> {{opcion.texto}} </span>
+              </label>
+              <br>
+            {% endfor %}
+              <br>
+             </div>
+            <br>
+             <button type="submit" class="BEnviar">Enviar</button>
         </form>
       </div> 
     </div>
-
     {% endif %}
-
   {% endblock contenido %}
 </body>
 </html>

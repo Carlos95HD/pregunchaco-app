@@ -65,7 +65,7 @@ def jugar(request, pk):
             JugadorUser.crear_intentos(pregunta)
         # respondidas = PreguntasRespondidas.objects.filter( jugador_user = JugadorUser ).values_list( "pregunta__pk", flat=True ) # filtra las preguntas respondidas
         # pregunta_categoria = Pregunta.objects.filter( categorias_id = pk ).exclude( pk__in = respondidas ) #filtra la categoria y excluye las respondidas
-        context = { "pregunta":pregunta }
+        context = { "pregunta":pregunta , "cat" :pk}
 
     return render(request, 'game/preguntas.html', context)
 
