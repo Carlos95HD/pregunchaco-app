@@ -27,7 +27,7 @@
           {{pregunta.texto}}
         </h3>
 
-        <form method="POST">
+        <form method="POST" id='form-respuesta'>
           {% csrf_token %}
 
           <input type="hidden" name='pregunta_pk' value="{{pregunta.pk}}">
@@ -39,7 +39,7 @@
           </label>
           {% endfor %}
           <br>
-          <button type="submit" class="bg-green-500">Enviar</button>
+          <button type="submit" id="btn-submit" class="bg-green-500">Enviar</button>
         </form>
       </div> 
     </div>
@@ -47,5 +47,9 @@
     {% endif %}
 
   {% endblock contenido %}
+
+  {% block script %}
+  <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+  {% endblock script %}
 </body>
 </html>
