@@ -1,7 +1,57 @@
 {%extends 'Base.html'%}
+{% load static %}
 
 {% block contenido %}
 
+<div class="container2">
+
+      <div class="Sub Sub1">
+          <img src="{% static ''%}img/game/categorias/personaje_{{respondida.pregunta.categorias.id}}.svg" class="Imag"> 
+          <p class="TextCat TextCat{{respondida.pregunta.categorias.id}}">
+              {% if respondida.pregunta.categorias.id == 1 %}
+              Geografia
+              {% elif respondida.pregunta.categorias.id == 2 %}
+              Cultura y Arte 
+              {% elif respondida.pregunta.categorias.id == 3 %}
+              Historia
+              {% elif respondida.pregunta.categorias.id == 4 %}
+              Deporte
+              {% elif respondida.pregunta.categorias.id == 5 %}
+              Economia
+              {% elif respondida.pregunta.categorias.id == 6 %}
+              Ciencia y Educacion
+              {% elif respondida.pregunta.categorias.id == 7 %}
+              Entreteniminto
+              {% endif %}
+          </p>
+      </div>
+        <div class="Sub Sub2">
+          <div class="Preg">
+           <h3>
+            {{respondida.pregunta.texto|safe}}
+            </h3> <br>
+          </div>
+          {% for opcion in  respondida.pregunta.opcion.all %}
+              <label for="choice-{{forloop.counter}}" class="Res2">
+                <span class="check2"> {{opcion.texto}} </span>
+              </label>
+              <br>
+          {% endfor %}
+
+      </div> 
+    </div>
+
+    <!-- continuar a la siguiente pregunta -->
+  <a href="{% url 'pregunta:jugar' respondida.pregunta.categorias.id  %}">
+    <button class="BotonS">
+      Siguiente
+    </button>
+  </a>
+
+
+
+
+<!--
 <div class="grid grid-cols-2 p-2">
   <h3>{{respondida.pregunta.texto|safe}}</h3>
   <p>
@@ -9,12 +59,12 @@
     {{respondida.respuesta.texto|safe}}
   </p>
 
-  <!-- Si la respuesta es Correcta -->
+   Si la respuesta es Correcta 
   {% if respondida.respuesta.correcta %}
 
   <span class="text-white bg-green-500 w-24">Respuesta Correcta!</span>
-
-  <!-- Si la respuesta es Incorrecta -->
+  -->
+  <!-- Si la respuesta es Incorrecta 
   {% else %}
 
   <h4 class="text-white bg-red-500 w-24">Respuesta Incorrecta!</h4>
@@ -30,15 +80,10 @@
   {% endfor %}
 
   {% endif %}
+  -->
 
-  <!-- continuar a la siguiente pregunta -->
-  <a href="{% url 'pregunta:jugar' respondida.pregunta.categorias.id  %}">
-    <button class="bg-blue-400 p-2 text-white">
-      Siguiente
-    </button>
-  </a>
 
 </div>
-
+-->
 
 {% endblock contenido %}

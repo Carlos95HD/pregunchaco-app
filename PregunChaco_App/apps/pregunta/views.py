@@ -56,7 +56,7 @@ def jugar(request, pk):
             raise Http404
 
         JugadorUser.validar_intento(pregunta_respondida, opcion_seleccionada)
-        return redirect('pregunta:resultado', pregunta_respondida.pk)
+        return redirect('pregunta:resultado', pregunta_respondida.pk,)
 
     else:
         pregunta = JugadorUser.obtener_nuevas_preguntas( pk )
@@ -73,7 +73,7 @@ def resultado_preguntas(request, pregunta_respondida_pk):
     respondida = get_object_or_404(PreguntasRespondidas, pk=pregunta_respondida_pk)
 
     context = {
-        'respondida':respondida
+        'respondida':respondida,
     }
 
     return render(request, 'game/resultados.html', context)

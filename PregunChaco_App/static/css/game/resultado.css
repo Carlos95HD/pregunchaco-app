@@ -25,28 +25,8 @@
 	margin-right: 5%;
 	padding: 10px;
 }
-.Rad{
-	padding-bottom: 20px;
-	padding-top: 20px;
-	margin: 20px;
-}
-.Preg{
-	text-indent: 25px;
-	align-self: center;
-	font-size: xx-large;
-	font-family: Quicksand;
-	font-weight: bold;
-	border-radius: 40px;
-	border-color: black;
-	border-width: thin;
-	border-style: solid;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	padding-left: 20px;
-	padding-right: 20PX;
-	word-wrap: break-word
-}
-.BEnviar{
+
+.BotonS{
 	width: 250px;
 	height: 70px;
 	padding-bottom: 10px;
@@ -60,9 +40,8 @@
 	position: absolute;
 	right:  10%;
 	bottom:  25%;
-
 }
-.check{
+.check2{
 	text-indent: 25px;
 	font-size: x-large;
 	font-family: Quicksand;
@@ -71,8 +50,10 @@
 	border-color: black;
 	border-width: thin;
 	border-style: solid;
-	cursor: pointer;
 	padding: 5px;
+
+	margin-top: 50px;
 }
-
-
+.Res2{
+	padding-top: 100px;
+}
