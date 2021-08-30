@@ -56,7 +56,7 @@ def jugar(request, pk):
             raise Http404
 
         JugadorUser.validar_intento(pregunta_respondida, opcion_seleccionada)
-        return redirect('pregunta:resultado', pregunta_respondida.pk)
+        return redirect('pregunta:resultado', pregunta_respondida.pk,)
 
     else:
         pregunta = JugadorUser.obtener_nuevas_preguntas( pk )
@@ -65,7 +65,7 @@ def jugar(request, pk):
             JugadorUser.crear_intentos(pregunta)
         # respondidas = PreguntasRespondidas.objects.filter( jugador_user = JugadorUser ).values_list( "pregunta__pk", flat=True ) # filtra las preguntas respondidas
         # pregunta_categoria = Pregunta.objects.filter( categorias_id = pk ).exclude( pk__in = respondidas ) #filtra la categoria y excluye las respondidas
-        context = { "pregunta":pregunta }
+        context = { "pregunta":pregunta , "cat" :pk}
 
     return render(request, 'game/preguntas.html', context)
 
@@ -73,7 +73,7 @@ def resultado_preguntas(request, pregunta_respondida_pk):
     respondida = get_object_or_404(PreguntasRespondidas, pk=pregunta_respondida_pk)
 
     context = {
-        'respondida':respondida
+        'respondida':respondida,
     }
 
     return render(request, 'game/resultados.html', context)

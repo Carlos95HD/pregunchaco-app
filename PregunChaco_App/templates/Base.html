@@ -10,7 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="{%static 'css/home.css'%}">
 	<link rel="stylesheet" type="text/css" href="{%static 'css/game/inicio.css'%}">
   <link rel="stylesheet" type="text/css" href="{%static 'css/game/categorias.css'%}">
+  <link rel="stylesheet" type="text/css" href="{%static 'css/game/resultado.css'%}">
   <link rel="stylesheet" type="text/css" href="{%static 'css/game/modo.css'%}">
+  <link rel="stylesheet" type="text/css" href="{%static 'css/game/preguntas.css'%}">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
   <!-- Icono de la pagina -->
@@ -21,10 +23,14 @@
 <body>
   <div class="contenedorPadre" >
       <div class="contenedor contenedor1"  >
+          <a href="{% url 'home' %}">
            <img src="{% static 'img/base/g9.png' %}" class="logo">
+          </a>
+          <a href="{% url 'home' %}">
            <div class="tytle Nombre"> 
               PregunChaco
            </div>
+          </a>
      </div>
 
       {% if user.is_authenticated %}
@@ -32,7 +38,12 @@
         <span class="mr-2 uppercase font-bold">
           {{ user.username }}
         </span>
-        <a href="{% url 'logout' %}" class="Boton_Login">Salir</a>
+        <a href="{% url 'pregunta:tabla' %}">
+          <img src="{% static 'img/Logo_Ranking.png' %}" class="logoR">
+        </a>
+        <a href="{% url 'logout' %}">
+          <img src="{% static 'img/salir.png' %}" class="logoS" >
+        </a>
       </div>
       {% endif %}
 

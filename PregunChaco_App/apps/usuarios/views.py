@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import CustomUserForm
 from django.contrib.auth import login, authenticate
+from django.contrib import messages
 
 def registro_usuario(request):
     data = {"form":CustomUserForm()}
@@ -14,6 +15,7 @@ def registro_usuario(request):
             password = formulario.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             login(request, user)
+            messages.success(request,'Te has registrado correctamente')
             return redirect(to='home')
 
     return render(request, 'usuarios/register.html', data)

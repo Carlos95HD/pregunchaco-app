@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --body-font: "Quicksand", sans-serif;
+  --color-light-blue: rgb(149,200,233);
+}
+
+.container2{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: center;
+	align-content: center;
+	padding: 3% 3%;
+}
+.Sub1{
+	width: 30%;
+	margin-left: 5%;
+	margin-right: 3%;
+}
+.Sub2{
+	width: 50%;
+	margin-left: 3%;
+	margin-right: 5%;
+	padding: 10px;
+}
+.Rad{
+	padding-bottom: 20px;
+	padding-top: 20px;
+	margin: 20px;
+}
+.Preg{
+	text-indent: 25px;
+	align-self: center;
+	font-size: xx-large;
+	font-family: Quicksand;
+	font-weight: bold;
+	border-radius: 40px;
+	border-color: black;
+	border-width: thin;
+	border-style: solid;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20PX;
+	word-wrap: break-word
+}
+.BEnviar{
+	width: 250px;
+	height: 70px;
+	padding-bottom: 10px;
+	border-color: black;
+	border-width: thin;
+	border-style: solid;
+	background-color: green;
+	border-radius: 30px;
+	font-size: x-large;
+	font-weight: bold;
+	position: absolute;
+	right:  10%;
+	bottom:  25%;
+
+}
+.check{
+	text-indent: 25px;
+	font-size: x-large;
+	font-family: Quicksand;
+	font-weight: bold;
+	border-radius: 30px;
+	border-color: black;
+	border-width: thin;
+	border-style: solid;
+	cursor: pointer;
+	padding: 5px;
+}
+
+
