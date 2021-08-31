@@ -47,10 +47,10 @@
 	word-wrap: break-word
 }
 .BEnviar{
+	color:#ffffff;
 	width: 250px;
 	height: 70px;
 	padding-bottom: 10px;
-	border-color: black;
 	border-width: thin;
 	border-style: solid;
 	background-color: green;
@@ -58,9 +58,8 @@
 	font-size: x-large;
 	font-weight: bold;
 	position: absolute;
-	right:  10%;
-	bottom:  25%;
-
+	right:5%;
+	bottom:5%;
 }
 .check{
 	text-indent: 25px;
@@ -73,6 +72,10 @@
 	border-style: solid;
 	cursor: pointer;
 	padding: 5px;
+}
+
+.Resp{
+	font-size: 170%;
 }
 
 

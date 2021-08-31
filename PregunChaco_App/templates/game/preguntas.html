@@ -49,6 +49,7 @@
           {{pregunta.texto}}
             </h3> <br>
           </div>
+          <h1 class="Resp">    Respuestas:</h1>
          <form method="POST" id="form-respuesta">
           {% csrf_token %}
             <input type="hidden" name='pregunta_pk' value="{{pregunta.pk}}" class="Quiz">

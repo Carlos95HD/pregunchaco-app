@@ -27,10 +27,10 @@
 }
 
 .BotonS{
+	color:#ffffff;
 	width: 250px;
 	height: 70px;
 	padding-bottom: 10px;
-	border-color: black;
 	border-width: thin;
 	border-style: solid;
 	background-color: green;
@@ -38,8 +38,8 @@
 	font-size: x-large;
 	font-weight: bold;
 	position: absolute;
-	right:  10%;
-	bottom:  25%;
+	right:5%;
+	bottom:5%;
 }
 .check2{
 	text-indent: 25px;
@@ -54,6 +54,43 @@
 
 	margin-top: 50px;
 }
+.Resp{
+	text-indent: 25px;
+	font-size: x-large;
+	font-family: Quicksand;
+	font-weight: bold;
+}
+
 .Res2{
 	padding-top: 100px;
+}
+
+.ReC{
+	text-indent: 25px;
+	font-size: x-large;
+	font-family: Quicksand;
+	font-weight: bold;
+	border-radius: 30px;
+	border-color: black;
+	border-width: thin;
+	border-style: solid;
+	padding: 5px;
+	background-color: green;
+	color: black;
+	margin-top: 50px;
+}
+.ReI{
+	text-indent: 25px;
+	font-size: x-large;
+	font-family: Quicksand;
+	font-weight: bold;
+	border-radius: 30px;
+	border-color: black;
+	border-width: thin;
+	border-style: solid;
+	padding: 5px;
+	background-color: red;
+	color: black;
+	margin-top: 50px;
+
 }

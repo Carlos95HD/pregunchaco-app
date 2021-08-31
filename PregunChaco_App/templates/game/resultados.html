@@ -31,15 +31,48 @@
             {{respondida.pregunta.texto|safe}}
             </h3> <br>
           </div>
-          {% for opcion in  respondida.pregunta.opcion.all %}
-              <label for="choice-{{forloop.counter}}" class="Res2">
-                <span class="check2"> {{opcion.texto}} </span>
-              </label>
-              <br>
-          {% endfor %}
-
-      </div> 
-    </div>
+            <h1 class="Resp">    Respuestas:</h1>
+            {% if respondida.respuesta.correcta %}
+              {% for opcion in  respondida.pregunta.opcion.all %}
+                 {% if opcion.correcta %}
+                <br>
+                <label for="choice-{{forloop.counter}}" class="Res2">
+                  <span class="ReC"> {{opcion.texto}} </span>
+                </label>
+                <br>
+                 {% else %}  
+                <br>
+                <label for="choice-{{forloop.counter}}" class="Res2">
+                  <span class="check2"> {{opcion.texto}} </span>
+                </label>
+                <br>
+                 {% endif %}  
+              {% endfor %}
+            {% else %}
+                {% for opcion in  respondida.pregunta.opcion.all %}
+                {% if opcion.correcta %}
+                <br>
+                <label for="choice-{{forloop.counter}}" class="Res2">
+                  <span class="ReC"> {{opcion.texto}} </span>
+                </label>
+                <br>
+                 {% elif respondida.respuesta.texto|safe == opcion.texto %}  
+                <br>
+                <label for="choice-{{forloop.counter}}" class="Res2">
+                  <span class="ReI"> {{opcion.texto}} </span>
+                </label>
+                <br>
+                 {% else %}  
+                <br>
+                <label for="choice-{{forloop.counter}}" class="Res2">
+                  <span class="check2"> {{opcion.texto}} </span>
+                </label>
+                <br>
+                {% endif %}  
+             {% endfor %}
+            {% endif %}  
+            </div> 
+          </div>
 
     <!-- continuar a la siguiente pregunta -->
   <a href="{% url 'pregunta:jugar' respondida.pregunta.categorias.id  %}">
