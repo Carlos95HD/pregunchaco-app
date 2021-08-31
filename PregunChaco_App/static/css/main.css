@@ -70,7 +70,7 @@ select:-webkit-autofill:focus {
 }
 
 .Nombre{
-  color: #1830FF;
+  color:black;  /*Nombre pregunchacos*/
   font-weight: bold;
   padding-left: 7%;
   font-size: xx-large;
