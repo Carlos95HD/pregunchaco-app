@@ -9,15 +9,28 @@
 	{% block contenido %}
 
     {% if pregunta is None %}
-      <div class="container1">
-        <div>
-          <h1>
-            Respondiste todas las preguntas. Mira la tabla de posiciones.
-          </h1>
-
-          <a href="{% url 'pregunta:tabla' %}">ver Aqui</a>
+      <div class="container1 text-center">
+        <div class="text-xl">
+          <h3>
+            Respondiste todas las preguntas. Mira la tabla de posiciones
+            <a href="{% url 'pregunta:tabla' %}" class="text-white bg-blue-400 rounded px-1">aquí</a>.
+          </h3>
         </div>
       </div>
+
+    <!-- inicio Puntuación de la partida -->
+    <div class="text-xl text-center mt-2">
+
+      {% if JugadorUser.puntaje_total == None %}
+        <h3>Puntuación total de esta partida</h3>
+        <p>0</p>
+      {% else %}
+        <h3>Puntuación total de esta partida</h3>
+        <p class='font-bold'>{{JugadorUser.puntaje_total}}</p>
+      {% endif %}
+
+    </div>
+    <!-- fin Puntuación de la partida -->
 
     {% else %}
 

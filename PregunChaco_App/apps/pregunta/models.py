@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import settings
+from decimal import Decimal
 import random
+
 
 class categoria(models.Model):
 
@@ -19,7 +21,7 @@ class Pregunta (models.Model):
 
     texto = models.TextField(verbose_name= 'Texto de la pregunta')
     categorias = models.ForeignKey(categoria, related_name='categorias', on_delete=models.CASCADE)
-    max_puntaje = models.DecimalField(verbose_name='Maximo Puntaje', default=3, decimal_places=2, max_digits=6)
+    max_puntaje = models.DecimalField(verbose_name='Maximo Puntaje', decimal_places=2, max_digits=6,default=0.00)
     def __str__(self):
         return self.texto 
 
@@ -34,7 +36,8 @@ class ElegirRespuesta(models.Model):
 
 class Jugador(models.Model):
     jugador = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    puntaje_total = models.DecimalField(verbose_name='Puntaje Total', default=1, decimal_places=2, max_digits=10, null=True)
+    puntaje_total = models.DecimalField(verbose_name='Puntaje Total', default=Decimal(0.00), decimal_places=2, max_digits=10, null=True)
+    mejor_puntuacion = models.DecimalField(verbose_name='Mejor Puntuacion', default=0, decimal_places=2, max_digits=10, null=True)
 
     def crear_intentos(self, pregunta):
         intento = PreguntasRespondidas( pregunta = pregunta, jugador_user = self )
@@ -75,9 +78,16 @@ class Jugador(models.Model):
     def actualizar_puntaje(self):
         puntaje_actualizado = self.intentos.filter(correcta=True).aggregate(
         models.Sum('puntaje_obtenido'))['puntaje_obtenido__sum']
+        # print("Puntaje Actualizado",puntaje_actualizado)
 
         self.puntaje_total = puntaje_actualizado
         self.save()
+
+        if self.puntaje_total != None:
+            if self.puntaje_total > self.mejor_puntuacion:
+                self.mejor_puntuacion = self.puntaje_total
+                # print("mejor puntuacion",self.mejor_puntuacion)
+                self.save()
 
 class PreguntasRespondidas(models.Model):
 	jugador_user = models.ForeignKey(Jugador, on_delete=models.CASCADE, related_name='intentos')

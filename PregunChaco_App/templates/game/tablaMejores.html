@@ -26,7 +26,11 @@
       <tr>
         <td class="border border-green-600 p-3">{{forloop.counter}}</td>
         <td class="border border-green-600 p-3">{{jugador.jugador.username}}</td>
-        <td class="border border-green-600 p-3">{{jugador.puntaje_total}}</td>
+        {% if jugador.mejor_puntuacion == None %}
+        <td class="border border-green-600 p-3">0</td>
+        {% else %}
+        <td class="border border-green-600 p-3">{{jugador.mejor_puntuacion}}</td>
+        {% endif %}
       </tr>
     {% endfor %}
   </tbody>
