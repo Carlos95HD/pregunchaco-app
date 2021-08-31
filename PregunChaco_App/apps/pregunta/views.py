@@ -44,7 +44,7 @@ def tabla_posiciones(request):
 def jugar(request, pk):
     context={}
     JugadorUser, created = Jugador.objects.get_or_create( jugador = request.user ) #Crea el jugador del usuario al elegir la categoria
-
+    # print('Puntuacion Jugador actual',JugadorUser.puntaje_total)
     if request.method == 'POST':
         pregunta_pk = request.POST.get('pregunta_pk')
         pregunta_respondida = JugadorUser.intentos.select_related( 'pregunta' ).get( pregunta__pk = pregunta_pk )
@@ -65,7 +65,7 @@ def jugar(request, pk):
             JugadorUser.crear_intentos(pregunta)
         # respondidas = PreguntasRespondidas.objects.filter( jugador_user = JugadorUser ).values_list( "pregunta__pk", flat=True ) # filtra las preguntas respondidas
         # pregunta_categoria = Pregunta.objects.filter( categorias_id = pk ).exclude( pk__in = respondidas ) #filtra la categoria y excluye las respondidas
-        context = { "pregunta":pregunta , "cat" :pk}
+        context = { "pregunta":pregunta , "cat" :pk, 'JugadorUser':JugadorUser}
 
     return render(request, 'game/preguntas.html', context)
 
