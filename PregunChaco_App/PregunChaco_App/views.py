@@ -13,8 +13,6 @@ def modo(request):
 	context = { "Cat": Cat }
 	return render(request, 'game/modo.html',context)
 
-# def categorias(request):
-# 	return render(request, 'game/categorias.html')
 
 def preguntas(request):
 	return render (request, 'game/preguntas.html')

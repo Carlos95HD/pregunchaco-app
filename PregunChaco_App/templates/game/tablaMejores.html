@@ -19,20 +19,20 @@
   <table class="border-separate mx-auto shadow-lg animate__animated animate__flipInX my-10">
     <thead>
       <tr>
-        <th class="border-b p-3">Posicion</th>
-        <th class="border-b p-3">Usuario</th>
-        <th class="border-b p-3">Puntaje</th>
+        <th class="p-3">Posicion</th>
+        <th class="p-3">Usuario</th>
+        <th class="p-3">Puntaje</th>
       </tr>
     </thead>
     <tbody>
       {% for jugador in total_jugadores %}
         <tr>
-          <td class="border-b p-3">{{forloop.counter}}</td>
-          <td class="border-b p-3">{{jugador.jugador.username}}</td>
+          <td class="border-t p-3 text-center">{{forloop.counter}}</td>
+          <td class="border-t p-3 text-center">{{jugador.jugador.username}}</td>
           {% if jugador.mejor_puntuacion == None %}
-          <td class="border-b p-3">0</td>
+          <td class="border-t p-3 text-center">0</td>
           {% else %}
-          <td class="border-b p-3">{{jugador.mejor_puntuacion}}</td>
+          <td class="border-t p-3 text-center">{{jugador.mejor_puntuacion}}</td>
           {% endif %}
         </tr>
       {% endfor %}
@@ -46,8 +46,8 @@
       </a>
     </li>
     <li class="mt-8">
-      <a href="{% url 'modo' %}" class="bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500 text-lg p-3 text-white rounded-3xl shadow-md">
-        Jugar de nuevo
+      <a href="{% url 'modo' %}" class="bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500 text-lg p-3 px-14 text-white rounded-3xl shadow-md">
+        Jugar
       </a>
     </li>
   </ul>

@@ -38,6 +38,22 @@ select:-webkit-autofill:focus {
   padding-left: 10px;
 }
 
+.zoom{
+  transition: all 200ms;
+}
+
+.zoom:hover{
+  transform: scale(1.2,1.2);
+}
+
+.zoomx1{
+  transition: all 200ms;
+}
+
+.zoomx1:hover{
+  transform: scale(1.1,1.1);
+}
+
 .logoR{
   width: 4rem;
   padding-right: 10px;

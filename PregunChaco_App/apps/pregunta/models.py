@@ -78,15 +78,12 @@ class Jugador(models.Model):
     def actualizar_puntaje(self):
         puntaje_actualizado = self.intentos.filter(correcta=True).aggregate(
         models.Sum('puntaje_obtenido'))['puntaje_obtenido__sum']
-        # print("Puntaje Actualizado",puntaje_actualizado)
 
         self.puntaje_total = puntaje_actualizado
         self.save()
 
         if self.puntaje_total != None:
             if self.puntaje_total > self.mejor_puntuacion:
-                self.mejor_puntuacion = self.puntaje_total
-                # print("mejor puntuacion",self.mejor_puntuacion)
                 self.save()
 
 class PreguntasRespondidas(models.Model):
@@ -96,14 +93,3 @@ class PreguntasRespondidas(models.Model):
 	correcta = models.BooleanField(verbose_name= 'Es esta la respuesta correcta', default=False, null=False)
 	puntaje_obtenido = models.DecimalField(verbose_name='Puntaje Obtenido', default=0, decimal_places=2, max_digits=6)
 
-
-# ##class Rubro(models.Model):
-    
-#     def __str__(self):
-#         return self.nombre
-
-# class SubRubro(models.Model):
-#     nombre = models.CharField(max_length = 50)
-#     rubro = models.ForeignKey(Rubro, related_name = 'mi_rubro', on_delete=models.CASCADE)
-#     def __str__(self):
-#         return self.nombre
