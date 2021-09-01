@@ -7,49 +7,52 @@
 
 
 {%block contenido%}
-<h1 class="text-center my-4"> 
-  <span class="bg-green-600 text-white p-3 rounded-3xl">
-
-    Los {{contar_user}} Mejores jugadores
-    
-  </span>
-</h1>
-
-<table class="border-separate border border-green-800 mx-auto">
-  <thead>
-    <tr>
-      <th class="border border-green-600 p-3">Posicion</th>
-      <th class="border border-green-600 p-3">Usuario</th>
-      <th class="border border-green-600 p-3">Puntaje</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for jugador in total_jugadores %}
+<div class="mt-10">
+  <h1 class="text-center my-4"> 
+    <span class="text-2xl font-bold animate__animated animate__fadeIn">
+  
+      Los {{contar_user}} Mejores jugadores
+      
+    </span>
+  </h1>
+  
+  <table class="border-separate mx-auto shadow-lg animate__animated animate__flipInX my-10">
+    <thead>
       <tr>
-        <td class="border border-green-600 p-3">{{forloop.counter}}</td>
-        <td class="border border-green-600 p-3">{{jugador.jugador.username}}</td>
-        {% if jugador.mejor_puntuacion == None %}
-        <td class="border border-green-600 p-3">0</td>
-        {% else %}
-        <td class="border border-green-600 p-3">{{jugador.mejor_puntuacion}}</td>
-        {% endif %}
+        <th class="border-b p-3">Posicion</th>
+        <th class="border-b p-3">Usuario</th>
+        <th class="border-b p-3">Puntaje</th>
       </tr>
-    {% endfor %}
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      {% for jugador in total_jugadores %}
+        <tr>
+          <td class="border-b p-3">{{forloop.counter}}</td>
+          <td class="border-b p-3">{{jugador.jugador.username}}</td>
+          {% if jugador.mejor_puntuacion == None %}
+          <td class="border-b p-3">0</td>
+          {% else %}
+          <td class="border-b p-3">{{jugador.mejor_puntuacion}}</td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  <ul class="text-center my-5 animate__animated animate__fadeIn">
+    <li class="mt-4">
+      <a href="{% url 'home' %}" class="bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500 text-lg py-3 px-14 text-white rounded-3xl shadow-md">
+        Inicio
+      </a>
+    </li>
+    <li class="mt-8">
+      <a href="{% url 'modo' %}" class="bg-gradient-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500 text-lg p-3 text-white rounded-3xl shadow-md">
+        Jugar de nuevo
+      </a>
+    </li>
+  </ul>
+</div>
 
-<ul class="text-center">
-  <li class="mt-4">
-    <a href="{% url 'home' %}" class="bg-blue-400 hover:bg-blue-500 text-xl p-3 text-white rounded-xl">
-      Ir al inicio
-    </a>
-  </li>
-  <li class="mt-8">
-    <a href="{% url 'modo' %}" class="bg-blue-400 hover:bg-blue-500 text-xl p-3 text-white rounded-xl">
-      Jugar de nuevo
-    </a>
-  </li>
-</ul>
 
 
 {%endblock contenido%}

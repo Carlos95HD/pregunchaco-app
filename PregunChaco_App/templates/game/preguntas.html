@@ -9,11 +9,11 @@
 	{% block contenido %}
 
     {% if pregunta is None %}
-      <div class="container1 text-center mt-4">
+      <div class="container1 text-center mt-4 animate__animated animate__fadeIn">
         <div class="text-xl">
           <h3>
             Respondiste todas las preguntas. Mira la tabla de posiciones
-            <a href="{% url 'pregunta:tabla' %}" class="text-white bg-blue-400 rounded px-1">aquí</a>.
+            <a href="{% url 'pregunta:tabla' %}" class="text-white bg-blue-400 rounded px-1">aquí</a>
           </h3>
         </div>
 
@@ -23,11 +23,11 @@
 
           {% if JugadorUser.puntaje_total == None %}
             <h3 class="font-bold text-xl">Puntuación total de esta partida</h3>
-            <p class='font-bold text-5xl text-blue-400'>0</p>
+            <p class='font-bold text-4xl text-blue-400 animate__animated animate__backInRight'>0</p>
             <!-- <img src="{%static 'img/base/carpincho-mate.svg'%}" alt="completado" class="mx-auto w-1/4 mt-10"> -->
           {% else %}
             <h3 class="font-bold text-xl">Puntuación total de esta partida</h3>
-            <p class='font-bold text-5xl text-blue-400'>{{JugadorUser.puntaje_total}}</p>
+            <p class='font-bold text-4xl text-blue-400 animate__animated animate__backInRight'>{{JugadorUser.puntaje_total}}</p>
             <!-- <img src="{%static 'img/base/carpincho-mate.svg'%}" alt="completado" class="mx-auto w-1/4 mt-10"> -->
           {% endif %}
 
@@ -54,18 +54,18 @@
               {% elif cat == 6 %}
               Ciencia y Educacion
               {% elif cat == 7 %}
-              Entreteniminto
+              Entretenimiento
               {% endif %}
           </p>
       </div>
         <div class="Sub Sub2">
-          <div class="Preg">
-           <h3>
+          <div class="Preg shadow-lg">
+           <h3 class="text-2xl">
           {{pregunta.texto}}
             </h3> <br>
           </div>
-          <h1 class="Resp">    Respuestas:</h1>
-         <form method="POST" id="form-respuesta" class="animate__animated animate__bounceInRight">
+          <h1 class="Resp text-2xl my-4">    Respuestas:</h1>
+         <form method="POST" id="form-respuesta" class="animate__animated animate__bounceIn">
           {% csrf_token %}
             <input type="hidden" name='pregunta_pk' value="{{pregunta.pk}}" class="Quiz">
             {% for opcion in pregunta.opcion.all %}

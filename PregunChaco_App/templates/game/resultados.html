@@ -29,12 +29,12 @@
           </p>
       </div>
         <div class="Sub Sub2 animate__animated animate__fadeIn">
-          <div class="Preg">
-           <h3>
+          <div class="Preg shadow-lg">
+           <h3 class="text-2xl">
             {{respondida.pregunta.texto|safe}}
             </h3> <br>
           </div>
-            <h1 class="Resp">    Respuestas:</h1>
+            <h2 class="Resp text-2xl my-4">    Respuestas:</h2>
             {% if respondida.respuesta.correcta %}
               {% for opcion in  respondida.pregunta.opcion.all %}
                  {% if opcion.correcta %}

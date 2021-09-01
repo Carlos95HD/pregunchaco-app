@@ -5,10 +5,10 @@ formRespuesta.addEventListener('submit', (e) => {
   console.log( e.target.value )
   check()
   function check() {
-    var r = document.getElementsByName("respuesta_pk")
-    var c = -1
+    let r = document.getElementsByName("respuesta_pk")
+    let c = -1
     
-    for(var i=0; i < r.length; i++){
+    for(let i=0; i < r.length; i++){
        if(r[i].checked) {
           c = i; 
        }
@@ -23,7 +23,7 @@ formRespuesta.addEventListener('submit', (e) => {
 
 function alerta(aviso) {
   const span = document.createElement("span");
-  span.classList.add('text-white',"bg-red-500", "p-4", "text-white", "rounded-md", "text-xl","animate__animated","animate__flash")
+  span.classList.add('text-white',"bg-red-500", "p-4", "text-white", "rounded-full", "text-xl","animate__animated","animate__flash")
   span.textContent = aviso;
 
   if (alert.textContent == 0) {

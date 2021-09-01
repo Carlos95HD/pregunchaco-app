@@ -31,13 +31,12 @@
 	margin: 20px;
 }
 .Preg{
-	text-indent: 25px;
 	align-self: center;
 	font-size: xx-large;
 	font-family: Quicksand;
 	font-weight: bold;
 	border-radius: 40px;
-	border-color: black;
+	border-color: #111827;
 	border-width: thin;
 	border-style: solid;
 	padding-top: 20px;
@@ -65,9 +64,9 @@
 	text-indent: 25px;
 	font-size: x-large;
 	font-family: Quicksand;
-	font-weight: bold;
+	/* font-weight: bold; */
 	border-radius: 30px;
-	border-color: black;
+	border-color: #111827;
 	border-width: thin;
 	border-style: solid;
 	cursor: pointer;
