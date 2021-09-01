@@ -84,6 +84,7 @@ class Jugador(models.Model):
 
         if self.puntaje_total != None:
             if self.puntaje_total > self.mejor_puntuacion:
+                self.mejor_puntuacion = self.puntaje_total
                 self.save()
 
 class PreguntasRespondidas(models.Model):
