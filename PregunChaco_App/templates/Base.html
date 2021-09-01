@@ -1,4 +1,4 @@
-{% load static %} 
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,7 +35,7 @@
           </a>
      </div>
 
-     <div class="flex mt-2 mr-20">
+     <div class="flex mt-2 mr-2">
       <a href="https://www.facebook.com/PregunChaco-108526878224013" target="_blank" class="zoom"> <!-- link redes -->
         <img src="{% static 'img/social/facebook.svg' %}" class="logoR"> <!-- Logo Redes -->
       </a>
@@ -49,12 +49,19 @@
 
       {% if user.is_authenticated %}
       <div class="contenedor contenedor2">
-        <span class="mr-2 uppercase font-bold">
+        <span class="mr-2 uppercase font-bold cursor-default">
           {{ user.username }}
         </span>
         <a href="{% url 'pregunta:tabla' %}">
           <img src="{% static 'img/Logo_Ranking.png' %}" class="logoR zoomx1">
         </a>
+
+        {% if user.is_staff and user.is_superuser %}
+        <a href="{% url 'admin:index' %}">
+          <img src="{% static 'img/base/admin.png' %}" class="logoR zoomx1 cursor-pointer">
+        </a>
+        {% endif %}
+
         <a href="{% url 'logout' %}">
           <img src="{% static 'img/salir.png' %}" class="logoS zoomx1" >
         </a>
