@@ -1,6 +1,9 @@
 {%extends 'Base.html'%}
 {% load static %}
 
+  <head>
+    {% block titulo %} PregunChaco | Resultado {% endblock titulo %}
+  </head>
 {% block contenido %}
 
 <div class="container2">
@@ -25,7 +28,7 @@
               {% endif %}
           </p>
       </div>
-        <div class="Sub Sub2">
+        <div class="Sub Sub2 animate__animated animate__fadeIn">
           <div class="Preg">
            <h3>
             {{respondida.pregunta.texto|safe}}
@@ -37,7 +40,7 @@
                  {% if opcion.correcta %}
                 <br>
                 <label for="choice-{{forloop.counter}}" class="Res2">
-                  <span class="ReC"> {{opcion.texto}} </span>
+                  <span class="ReC text-white"> {{opcion.texto}} </span>
                 </label>
                 <br>
                  {% else %}  
@@ -53,13 +56,13 @@
                 {% if opcion.correcta %}
                 <br>
                 <label for="choice-{{forloop.counter}}" class="Res2">
-                  <span class="ReC"> {{opcion.texto}} </span>
+                  <span class="ReC text-white"> {{opcion.texto}} </span>
                 </label>
                 <br>
                  {% elif respondida.respuesta.texto|safe == opcion.texto %}  
                 <br>
                 <label for="choice-{{forloop.counter}}" class="Res2">
-                  <span class="ReI"> {{opcion.texto}} </span>
+                  <span class="ReI text-white"> {{opcion.texto}} </span>
                 </label>
                 <br>
                  {% else %}  

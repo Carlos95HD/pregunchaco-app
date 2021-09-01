@@ -1,6 +1,10 @@
 {%extends 'Base.html'%}
 {% load static %}
 
+<head>
+  {% block titulo %} PregunChaco | Modo {% endblock titulo %}
+</head>
+
 {% block contenido %}
 
 <div class="text-center">
@@ -10,12 +14,12 @@
   </a>
 
   	<div class="Box2">
-  		<div class="Modo Modo1">
+  		<div class="Modo Modo1 animate__animated animate__flipInX">
   			<a href="{% url 'pregunta:jugar' Cat  %}">
   				<img src="{% static 'img/game/Modo/cat_personajes_01.svg' %}">
   			</a>
   		</div>
-  		<div class="Modo Modo2"> 
+  		<div class="Modo Modo2 animate__animated animate__flipInX"> 
   			<a href="{% url 'pregunta:categoria' %}">
   				<img src="{% static 'img/game/Modo/cat_personajes_02.svg' %}">
   			</a>

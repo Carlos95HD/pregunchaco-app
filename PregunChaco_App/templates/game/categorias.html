@@ -7,6 +7,10 @@
 </head>
 <body>
 
+  <head>
+    {% block titulo %} PregunChaco | Categorias {% endblock titulo %}
+  </head>
+
 {% block contenido %}
 
 <div class="text-center">
@@ -19,7 +23,7 @@
     
     <!-- CARGA LAS CATEGORIAS DESDE LA BASE DE DATOS -->
     {% for c in categorias %}
-      <div class="Cat Categoria{{c.id}}">
+      <div class="Cat Categoria{{c.id}} animate__animated animate__flipInX">
         <a href="{% url 'pregunta:jugar' c.id  %}">
           <img src="{% static ''%}img/game/categorias/personaje_{{c.id}}.svg">
           <p class="TextCat TextCat{{c.id}}">{{c}}</p>

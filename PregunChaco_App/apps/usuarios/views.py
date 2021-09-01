@@ -4,18 +4,20 @@ from django.contrib.auth import login, authenticate
 from django.contrib import messages
 
 def registro_usuario(request):
-    data = {"form":CustomUserForm()}
+    form = {"form":CustomUserForm()}
 
     if request.method == 'POST':
-        formulario = CustomUserForm(request.POST)
-        if formulario.is_valid():
-            formulario.save()
+        form = CustomUserForm(request.POST)
+        if form.is_valid():
+            form.save()
             #Autenticar y redirigirlo al inicio
-            username = formulario.cleaned_data['username']
-            password = formulario.cleaned_data['password1']
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             login(request, user)
             messages.success(request,'Te has registrado correctamente')
             return redirect(to='home')
+        else:
+            return render(request, 'usuarios/register.html', {"form":form})
 
-    return render(request, 'usuarios/register.html', data)
+    return render(request, 'usuarios/register.html', form)
