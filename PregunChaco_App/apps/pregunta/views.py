@@ -14,7 +14,7 @@ def listar_categoria(request):
 
 #Tabla de posiciones Mejores Jugadores
 def tabla_posiciones(request):
-    total_jugadores = Jugador.objects.order_by('-puntaje_total')[:10]
+    total_jugadores = Jugador.objects.order_by('-mejor_puntuacion')[:10]
     contador = total_jugadores.count()
 
     context = {
