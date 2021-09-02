@@ -19,16 +19,15 @@
     Volver
   </a>
 
-<div class="Box1">
+<div class="Box1 mt-4 grid grid-cols-2 justify-items-center md:flex">
     
     <!-- CARGA LAS CATEGORIAS DESDE LA BASE DE DATOS -->
     {% for c in categorias %}
-      <div class="Cat Categoria{{c.id}} animate__animated animate__flipInX">
+      <div class="w-3/4 md:w-96 Cat Categoria{{c.id}} animate__animated animate__flipInX">
         <a href="{% url 'pregunta:jugar' c.id  %}">
           <img src="{% static ''%}img/game/categorias/personaje_{{c.id}}.svg">
-          <p class="TextCat TextCat{{c.id}}">{{c}}</p>
         </a>
-
+        <p class="text-sm p-3 w-full h-auto md:text-3xl md:p-10 TextCat TextCat{{c.id}}">{{c}}</p>
       </div>
     {% endfor %}
   	

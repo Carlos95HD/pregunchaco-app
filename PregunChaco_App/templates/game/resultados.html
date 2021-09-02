@@ -8,7 +8,7 @@
 
 <div class="container2">
 
-      <div class="Sub Sub1">
+      <div class="Sub Sub1 hidden md:block">
           <img src="{% static ''%}img/game/categorias/personaje_{{respondida.pregunta.categorias.id}}.svg" class="Imag"> 
           <p class="TextCat TextCat{{respondida.pregunta.categorias.id}}">
               {% if respondida.pregunta.categorias.id == 1 %}
@@ -28,61 +28,59 @@
               {% endif %}
           </p>
       </div>
-        <div class="Sub Sub2 animate__animated animate__fadeIn">
+        <div class="Sub Sub2 w-full md:w-1/2 animate__animated animate__fadeIn">
           <div class="Preg shadow-lg">
-           <h3 class="text-2xl">
+           <h3 class="text-xl md:text-2xl">
             {{respondida.pregunta.texto|safe}}
             </h3> <br>
           </div>
-            <h2 class="Resp text-2xl my-4">    Respuestas:</h2>
+            <h2 class="Resp text-2xl mt-4">    Respuestas:</h2>
             {% if respondida.respuesta.correcta %}
               {% for opcion in  respondida.pregunta.opcion.all %}
                  {% if opcion.correcta %}
-                <br>
-                <label for="choice-{{forloop.counter}}" class="Res2">
-                  <span class="ReC text-white"> {{opcion.texto}} </span>
+
+                <label for="choice-{{forloop.counter}}" class="grid">
+                  <span class="ReC text-white text-xl p-2 md:text-2xl"> {{opcion.texto}} </span>
                 </label>
-                <br>
+
                  {% else %}  
-                <br>
-                <label for="choice-{{forloop.counter}}" class="Res2">
-                  <span class="check2"> {{opcion.texto}} </span>
+
+                <label for="choice-{{forloop.counter}}" class="grid">
+                  <span class="check2 text-xl p-2 md:text-2xl"> {{opcion.texto}} </span>
                 </label>
-                <br>
+
                  {% endif %}  
               {% endfor %}
             {% else %}
                 {% for opcion in  respondida.pregunta.opcion.all %}
                 {% if opcion.correcta %}
-                <br>
-                <label for="choice-{{forloop.counter}}" class="Res2">
-                  <span class="ReC text-white"> {{opcion.texto}} </span>
+
+                <label for="choice-{{forloop.counter}}" class="grid">
+                  <span class="ReC text-white text-xl p-2 md:text-2xl"> {{opcion.texto}} </span>
                 </label>
-                <br>
+
                  {% elif respondida.respuesta.texto|safe == opcion.texto %}  
-                <br>
-                <label for="choice-{{forloop.counter}}" class="Res2">
-                  <span class="ReI text-white"> {{opcion.texto}} </span>
+
+                <label for="choice-{{forloop.counter}}" class="grid">
+                  <span class="ReI text-white text-xl p-2 md:text-2xl"> {{opcion.texto}} </span>
                 </label>
-                <br>
+
                  {% else %}  
-                <br>
-                <label for="choice-{{forloop.counter}}" class="Res2">
-                  <span class="check2"> {{opcion.texto}} </span>
-                </label>
-                <br>
+
+                <label for="choice-{{forloop.counter}}" class="grid">
+                  <span class="check2 text-xl p-2 md:text-2xl"> {{opcion.texto}} </span>
+
                 {% endif %}  
              {% endfor %}
             {% endif %}  
-            </div> 
-          </div>
-
-    <!-- continuar a la siguiente pregunta -->
+            </div>
+                <!-- continuar a la siguiente pregunta -->
   <a href="{% url 'pregunta:jugar' respondida.pregunta.categorias.id  %}">
-    <button class="BotonS">
+    <button class="relative mt-10 lg:absolute BotonS ">
       Siguiente
     </button>
   </a>
+          </div>
 
 
 
@@ -116,7 +114,7 @@
   {% endfor %}
 
   {% endif %}
-  -->
+
 
 
 </div>

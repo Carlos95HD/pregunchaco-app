@@ -56,7 +56,6 @@
 	border-radius: 30px;
 	font-size: x-large;
 	font-weight: bold;
-	position: absolute;
 	right:5%;
 	bottom:12%;
 }
@@ -64,7 +63,6 @@
 	text-indent: 25px;
 	font-size: x-large;
 	font-family: Quicksand;
-	/* font-weight: bold; */
 	border-radius: 30px;
 	border-color: #111827;
 	border-width: thin;

@@ -18,14 +18,15 @@
     {% endfor %}
   {% endif %}
 
-  <div class="container grid grid-cols-2 mx-auto">
+  <div class="container grid sm:grid-cols-1 md:grid-cols-2 mx-auto">
     <div class="p-2 text-center">
-      <h1 class="font-bold text-6xl text-bold animate__animated animate__pulse">PregunChaco </h1>
+      <h1 class="font-bold text-4xl mt-2 md:text-6xl text-bold animate__animated animate__pulse">PregunChaco </h1>
       <p class="text-xl mt-4">Esta es una página web desarrollada por alumnos del informatorio del año 2021 <br> ¡Espero que lo disfruten!</p>
       <img src="{% static 'img/home/carpincho.svg' %}" alt="carpincho" class="w-full">
     </div>
+
     <div class="self-center text-center grid">
-      <div class="p-6 rounded-3xl px-20 py-24 shadow-2xl animate__animated animate__bounceInRight">
+      <div class="p-6 rounded-3xl px-20 pb-20 sm:py-24 shadow-2xl animate__animated animate__bounceInRight">
             <h2 class="font-semibold text-2xl mb-5">¡Bienvenido a PregunChaco!</h2>
             <p class="text-xl mb-10">Ingresa a tu cuenta para disfrutar de este increíble juego,
           consigue las mejores marcas, compite y aprende más sobre esta hermosa
