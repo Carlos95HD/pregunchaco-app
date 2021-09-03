@@ -57,7 +57,7 @@
         </a>
 
         {% if user.is_staff and user.is_superuser %}
-        <a href="{% url 'admin:index' %}">
+        <a href="{% url 'admin:index' %}" target='_blank'>
           <img src="{% static 'img/base/admin.png' %}" class="logoR zoomx1 cursor-pointer">
         </a>
         {% endif %}

@@ -5,8 +5,6 @@ from .models import PreguntasRespondidas, categoria, Jugador
 # Create your views here.
 
 def listar_categoria(request):
-    JugadorUser, created = Jugador.objects.get_or_create( jugador = request.user ) #Obtiene el jugador del usuario al entrar a categoria
-    JugadorUser.vaciar_respondidas_user()
 
     categorias = categoria.objects.all()
     context = {"categorias":categorias}
